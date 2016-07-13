@@ -1,4 +1,4 @@
-# CodilityChallenges
+# Codility Challenges
 This repo contains code answering Codility challenges and lessons
 
 [Codility Lessons](https://codility.com/programmers/lessons/)
