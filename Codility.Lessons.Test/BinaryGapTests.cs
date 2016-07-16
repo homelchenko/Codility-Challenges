@@ -9,7 +9,7 @@ namespace Codility.Lessons.Test
     public class BinaryGapTests
     {
         [Test]
-        public void Solution_WhenNIsZero_ShouldReturnZero()
+        public void Solution_WhenZero_ShouldReturnZero()
         {
             // Arrange
 
@@ -18,7 +18,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsOne_ShouldReturnZero()
+        public void Solution_WhenOne_ShouldReturnZero()
         {
             // Arrange
 
@@ -27,7 +27,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsFive_ShouldReturnOne()
+        public void Solution_WhenFive_ShouldReturnOne()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -40,7 +40,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsNine_ShouldReturnTwo()
+        public void Solution_WhenNine_ShouldReturnTwo()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -53,7 +53,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsTen_ShouldReturnOne()
+        public void Solution_WhenTen_ShouldReturnOne()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -66,7 +66,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsEight_ShouldReturnZero()
+        public void Solution_WhenEight_ShouldReturnZero()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -79,7 +79,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsFortyOne_ShouldReturnTwo()
+        public void Solution_WhenFortyOne_ShouldReturnTwo()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -92,7 +92,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsThirtySeven_ShouldReturnTwo()
+        public void Solution_WhenThirtySeven_ShouldReturnTwo()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -105,7 +105,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsTwoHundredNinetySix_ShouldReturnTwo()
+        public void Solution_WhenTwoHundredNinetySix_ShouldReturnTwo()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -118,7 +118,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsIntMax_ShouldReturnZero()
+        public void Solution_WhenIntMax_ShouldReturnZero()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -131,7 +131,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsMinusFive_ShouldReturnZero()
+        public void Solution_WhenMinusFive_ShouldReturnZero()
         {
             // Arrange
             var binaryGap = new BinaryGap();
