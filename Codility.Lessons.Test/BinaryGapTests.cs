@@ -40,7 +40,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenIsNine_ShouldReturnTwo()
+        public void Solution_WhenNIsNine_ShouldReturnTwo()
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -53,17 +53,30 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void ConvertToBinary_WhenZero_ShouldReturnEmpty()
+        public void Solution_WhenNIsTen_ShouldReturnOne()
         {
             // Arrange
             var binaryGap = new BinaryGap();
 
             // Act
-            string binary = binaryGap.ConvertToBinary(0);
+            int maxGapLength = binaryGap.solution(10);
 
             // Assert
-            binary.Should().BeEmpty();
+            maxGapLength.Should().Be(2);
         }
+
+        //[Test]
+        //public void ConvertToBinary_WhenZero_ShouldReturnEmpty()
+        //{
+        //    // Arrange
+        //    var binaryGap = new BinaryGap();
+
+        //    // Act
+        //    string binary = binaryGap.ConvertToBinary(0);
+
+        //    // Assert
+        //    binary.Should().BeEmpty();
+        //}
 
         [Test]
         public void ConvertToBinary_WhenOne_ShouldReturnOne()
