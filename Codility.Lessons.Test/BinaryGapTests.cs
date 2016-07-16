@@ -9,21 +9,16 @@ namespace Codility.Lessons.Test
     public class BinaryGapTests
     {
         [Test]
-        public void Solution_WhenZero_ShouldReturnZero()
+        public void Solution_WhenEight_ShouldReturnZero()
         {
             // Arrange
+            var binaryGap = new BinaryGap();
 
-            // Act & Asseert
-            AssertThatThereIsNoGap(0);
-        }
+            // Act
+            int maxGapLength = binaryGap.solution(8);
 
-        [Test]
-        public void Solution_WhenOne_ShouldReturnZero()
-        {
-            // Arrange
-
-            // Act & Assert
-            AssertThatThereIsNoGap(1);
+            // Assert
+            maxGapLength.Should().Be(0);
         }
 
         [Test]
@@ -40,45 +35,6 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNine_ShouldReturnTwo()
-        {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(9);
-
-            // Assert
-            maxGapLength.Should().Be(2);
-        }
-
-        [Test]
-        public void Solution_WhenTen_ShouldReturnOne()
-        {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(10);
-
-            // Assert
-            maxGapLength.Should().Be(1);
-        }
-
-        [Test]
-        public void Solution_WhenEight_ShouldReturnZero()
-        {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(8);
-
-            // Assert
-            maxGapLength.Should().Be(0);
-        }
-
-        [Test]
         public void Solution_WhenFortyOne_ShouldReturnTwo()
         {
             // Arrange
@@ -86,32 +42,6 @@ namespace Codility.Lessons.Test
 
             // Act
             int maxGapLength = binaryGap.solution(41);
-
-            // Assert
-            maxGapLength.Should().Be(2);
-        }
-
-        [Test]
-        public void Solution_WhenThirtySeven_ShouldReturnTwo()
-        {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(37);
-
-            // Assert
-            maxGapLength.Should().Be(2);
-        }
-
-        [Test]
-        public void Solution_WhenTwoHundredNinetySix_ShouldReturnTwo()
-        {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(296);
 
             // Assert
             maxGapLength.Should().Be(2);
@@ -141,6 +71,76 @@ namespace Codility.Lessons.Test
 
             // Assert
             maxGapLength.Should().Be(0);
+        }
+
+        [Test]
+        public void Solution_WhenNine_ShouldReturnTwo()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(9);
+
+            // Assert
+            maxGapLength.Should().Be(2);
+        }
+
+        [Test]
+        public void Solution_WhenOne_ShouldReturnZero()
+        {
+            // Arrange
+
+            // Act & Assert
+            AssertThatThereIsNoGap(1);
+        }
+
+        [Test]
+        public void Solution_WhenTen_ShouldReturnOne()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(10);
+
+            // Assert
+            maxGapLength.Should().Be(1);
+        }
+
+        [Test]
+        public void Solution_WhenThirtySeven_ShouldReturnTwo()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(37);
+
+            // Assert
+            maxGapLength.Should().Be(2);
+        }
+
+        [Test]
+        public void Solution_WhenTwoHundredNinetySix_ShouldReturnTwo()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(296);
+
+            // Assert
+            maxGapLength.Should().Be(2);
+        }
+
+        [Test]
+        public void Solution_WhenZero_ShouldReturnZero()
+        {
+            // Arrange
+
+            // Act & Asseert
+            AssertThatThereIsNoGap(0);
         }
 
         private static void AssertThatThereIsNoGap(int input)
