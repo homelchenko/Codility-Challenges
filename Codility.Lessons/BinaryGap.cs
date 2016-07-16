@@ -6,9 +6,6 @@ namespace Codility.Lessons
     {
         public int solution(int N)
         {
-            if (N == 0)
-                return 0;
-
             int gapLength = 0;
             int maxGapLength = gapLength;
             bool isInRange = false;
