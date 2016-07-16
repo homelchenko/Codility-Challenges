@@ -52,6 +52,45 @@ namespace Codility.Lessons.Test
             binary.Should().BeEmpty();
         }
 
+        [Test]
+        public void ConvertToBinary_WhenOne_ShouldReturnOne()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            string binary = binaryGap.ConvertToBinary(1);
+
+            // Assert
+            binary.Should().Be("1");
+        }
+
+        [Test]
+        public void ConvertToBinary_WhenThree_ShouldReturnOneOne()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            string binary = binaryGap.ConvertToBinary(3);
+
+            // Assert
+            binary.Should().Be("11");
+        }
+
+        [Test]
+        public void ConvertToBinary_WhenFive_ShouldReturnOneZeroOne()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            string binary = binaryGap.ConvertToBinary(5);
+
+            // Assert
+            binary.Should().Be("101");
+        }
+
         private static void AssertThatThereIsNoGap(int input)
         {
             // Arrange
