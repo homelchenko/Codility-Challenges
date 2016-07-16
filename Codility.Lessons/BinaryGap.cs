@@ -9,17 +9,22 @@ namespace Codility.Lessons
             if (N == 0)
                 return 0;
 
-            string binaryInput = ConvertToBinary(N);
-
             int gapLength = 0;
             int maxGapLength = gapLength;
             bool isInRange = false;
 
-            for (int i = binaryInput.Length - 1; i >= 0; i--)
+            int remainder = N;
+
+            while (remainder > 0)
             {
-                if (binaryInput[i] == '0' & isInRange)
+                int modulus = remainder % 2;
+
+                if (modulus == 0)
                 {
-                    gapLength++;
+                    if (isInRange)
+                    {
+                        gapLength++;
+                    }
                 }
                 else
                 {
@@ -27,6 +32,8 @@ namespace Codility.Lessons
                     maxGapLength = Math.Max(maxGapLength, gapLength);
                     gapLength = 0;
                 }
+
+                remainder /= 2;
             }
 
             return maxGapLength;
