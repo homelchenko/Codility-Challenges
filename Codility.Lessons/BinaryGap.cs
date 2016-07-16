@@ -13,14 +13,17 @@ namespace Codility.Lessons
 
             int gapLength = 0;
             int maxGapLength = gapLength;
+            bool isInRange = false;
+
             for (int i = binaryInput.Length - 1; i >= 0; i--)
             {
-                if (binaryInput[i] == '0')
+                if (binaryInput[i] == '0' & isInRange)
                 {
                     gapLength++;
                 }
                 else
                 {
+                    isInRange = true;
                     maxGapLength = Math.Max(maxGapLength, gapLength);
                     gapLength = 0;
                 }
