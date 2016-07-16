@@ -61,7 +61,7 @@ namespace Codility.Lessons.Test
             int maxGapLength = binaryGap.solution(10);
 
             // Assert
-            maxGapLength.Should().Be(2);
+            maxGapLength.Should().Be(1);
         }
 
         [Test]
