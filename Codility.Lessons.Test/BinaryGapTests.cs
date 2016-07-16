@@ -27,13 +27,13 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void Solution_WhenNIsFive_ShouldReturn1()
+        public void Solution_WhenNIsFive_ShouldReturnOne()
         {
             // Arrange
             var binaryGap = new BinaryGap();
 
             // Act
-            int maxGapLength = binaryGap.solution(1);
+            int maxGapLength = binaryGap.solution(5);
 
             // Assert
             maxGapLength.Should().Be(1);
