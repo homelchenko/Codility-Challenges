@@ -39,6 +39,19 @@ namespace Codility.Lessons.Test
             maxGapLength.Should().Be(1);
         }
 
+        [Test]
+        public void ConvertToBinary_WhenZero_ShouldReturnEmpty()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            string binary = binaryGap.ConvertToBinary(0);
+
+            // Assert
+            binary.Should().BeEmpty();
+        }
+
         private static void AssertThatThereIsNoGap(int input)
         {
             // Arrange
@@ -50,5 +63,8 @@ namespace Codility.Lessons.Test
             // Assert
             maxGapLength.Should().Be(0);
         }
+
+        // TODO: Test for Int.Max
+        // TODO: Test for negative input
     }
 }
