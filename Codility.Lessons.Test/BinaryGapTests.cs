@@ -117,6 +117,19 @@ namespace Codility.Lessons.Test
             binary.Should().Be("101");
         }
 
+        [Test]
+        public void ConvertToBinary_WhenTen_ShouldReturnOneZeroOneZero()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            string binary = binaryGap.ConvertToBinary(10);
+
+            // Assert
+            binary.Should().Be("1010");
+        }
+
         private static void AssertThatThereIsNoGap(int input)
         {
             // Arrange

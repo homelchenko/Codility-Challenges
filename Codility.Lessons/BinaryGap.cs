@@ -29,7 +29,7 @@
             {
                 int modulus = remainder % @base;
 
-                binary += modulus;
+                binary = modulus + binary;
 
                 remainder /= @base;
             }
