@@ -65,6 +65,19 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
+        public void Solution_WhenNIsEight_ShouldReturnZero()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(8);
+
+            // Assert
+            maxGapLength.Should().Be(0);
+        }
+
+        [Test]
         public void ConvertToBinary_WhenZero_ShouldReturnEmpty()
         {
             // Arrange
