@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 
 using NUnit.Framework;
 
@@ -116,6 +117,19 @@ namespace Codility.Lessons.Test
             maxGapLength.Should().Be(2);
         }
 
+        [Test]
+        public void Solution_WhenNIsIntMax_ShouldReturnZero()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(Int32.MaxValue);
+
+            // Assert
+            maxGapLength.Should().Be(0);
+        }
+
         private static void AssertThatThereIsNoGap(int input)
         {
             // Arrange
@@ -128,9 +142,6 @@ namespace Codility.Lessons.Test
             maxGapLength.Should().Be(0);
         }
 
-        // TODO: Test for Int.Max
         // TODO: Test for negative input
-        // TODO: Test for 1000 = 0
-        // TODO: Test for 10100 = 1
     }
 }
