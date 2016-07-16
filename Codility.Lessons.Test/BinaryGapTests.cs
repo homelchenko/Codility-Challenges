@@ -17,8 +17,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        // Rename the test
-        public void Solution_WhenNIs1_ShouldReturnZero()
+        public void Solution_WhenNIsOne_ShouldReturnZero()
         {
             // Arrange
 
@@ -65,18 +64,18 @@ namespace Codility.Lessons.Test
             maxGapLength.Should().Be(2);
         }
 
-        //[Test]
-        //public void ConvertToBinary_WhenZero_ShouldReturnEmpty()
-        //{
-        //    // Arrange
-        //    var binaryGap = new BinaryGap();
+        [Test]
+        public void ConvertToBinary_WhenZero_ShouldReturnEmpty()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
 
-        //    // Act
-        //    string binary = binaryGap.ConvertToBinary(0);
+            // Act
+            string binary = binaryGap.ConvertToBinary(0);
 
-        //    // Assert
-        //    binary.Should().BeEmpty();
-        //}
+            // Assert
+            binary.Should().BeEmpty();
+        }
 
         [Test]
         public void ConvertToBinary_WhenOne_ShouldReturnOne()
