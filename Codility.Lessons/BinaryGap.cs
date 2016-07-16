@@ -1,4 +1,6 @@
-﻿namespace Codility.Lessons
+﻿using System;
+
+namespace Codility.Lessons
 {
     public class BinaryGap
     {
@@ -10,13 +12,19 @@
             string binaryInput = ConvertToBinary(N);
 
             int gapLength = 0;
+            int maxGapLength = gapLength;
             for (int i = 1; i < binaryInput.Length; i++) // 1st element is to be '1' anyways
             {
                 if (binaryInput[i] == '0')
                     gapLength++;
+                else
+                {
+                    maxGapLength = Math.Max(maxGapLength, gapLength);
+                    gapLength = 0;
+                }
             }
 
-            return gapLength;
+            return maxGapLength;
         }
 
         public string ConvertToBinary(int N)
