@@ -11,8 +11,6 @@ namespace Codility.Lessons.Test
         [Test]
         public void Solution_WhenEight_ShouldReturnZero()
         {
-            // Arrange
-
             // Act & Assert
             AssertThatThereIsNoGap(8);
         }
@@ -20,34 +18,20 @@ namespace Codility.Lessons.Test
         [Test]
         public void Solution_WhenFive_ShouldReturnOne()
         {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(5);
-
-            // Assert
-            maxGapLength.Should().Be(1);
+            // Act & Assert
+            AssertThatMaxGapIsOfLength(5, 1);
         }
 
         [Test]
         public void Solution_WhenFortyOne_ShouldReturnTwo()
         {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(41);
-
-            // Assert
-            maxGapLength.Should().Be(2);
+            // Act & Assert
+            AssertThatMaxGapIsOfLength(41, 2);
         }
 
         [Test]
         public void Solution_WhenIntMax_ShouldReturnZero()
         {
-            // Arrange
-
             // Act & Assert
             AssertThatThereIsNoGap(Int32.MaxValue);
         }
@@ -55,8 +39,6 @@ namespace Codility.Lessons.Test
         [Test]
         public void Solution_WhenMinusFive_ShouldReturnZero()
         {
-            // Arrange
-
             // Act & Assert
             AssertThatThereIsNoGap(-5);
         }
@@ -64,21 +46,13 @@ namespace Codility.Lessons.Test
         [Test]
         public void Solution_WhenNine_ShouldReturnTwo()
         {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(9);
-
-            // Assert
-            maxGapLength.Should().Be(2);
+            // Act & Assert
+            AssertThatMaxGapIsOfLength(9, 2);
         }
 
         [Test]
         public void Solution_WhenOne_ShouldReturnZero()
         {
-            // Arrange
-
             // Act & Assert
             AssertThatThereIsNoGap(1);
         }
@@ -86,52 +60,32 @@ namespace Codility.Lessons.Test
         [Test]
         public void Solution_WhenTen_ShouldReturnOne()
         {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(10);
-
-            // Assert
-            maxGapLength.Should().Be(1);
+            // Act & Assert
+            AssertThatMaxGapIsOfLength(10, 1);
         }
 
         [Test]
         public void Solution_WhenThirtySeven_ShouldReturnTwo()
         {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(37);
-
-            // Assert
-            maxGapLength.Should().Be(2);
+            // Act & Assert
+            AssertThatMaxGapIsOfLength(37, 2);
         }
 
         [Test]
         public void Solution_WhenTwoHundredNinetySix_ShouldReturnTwo()
         {
-            // Arrange
-            var binaryGap = new BinaryGap();
-
-            // Act
-            int maxGapLength = binaryGap.solution(296);
-
-            // Assert
-            maxGapLength.Should().Be(2);
+            // Act & Assert
+            AssertThatMaxGapIsOfLength(296, 2);
         }
 
         [Test]
         public void Solution_WhenZero_ShouldReturnZero()
         {
-            // Arrange
-
-            // Act & Asseert
+            // Act & Assert
             AssertThatThereIsNoGap(0);
         }
 
-        private static void AssertThatThereIsNoGap(int input)
+        private static void AssertThatMaxGapIsOfLength(int input, int expectedValueOfMaxGapLength)
         {
             // Arrange
             var binaryGap = new BinaryGap();
@@ -140,7 +94,12 @@ namespace Codility.Lessons.Test
             int maxGapLength = binaryGap.solution(input);
 
             // Assert
-            maxGapLength.Should().Be(0);
+            maxGapLength.Should().Be(expectedValueOfMaxGapLength);
+        }
+
+        private static void AssertThatThereIsNoGap(int input)
+        {
+            AssertThatMaxGapIsOfLength(input, 0);
         }
     }
 }
