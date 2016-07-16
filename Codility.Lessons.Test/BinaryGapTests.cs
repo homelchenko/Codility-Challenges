@@ -12,13 +12,9 @@ namespace Codility.Lessons.Test
         public void Solution_WhenEight_ShouldReturnZero()
         {
             // Arrange
-            var binaryGap = new BinaryGap();
 
-            // Act
-            int maxGapLength = binaryGap.solution(8);
-
-            // Assert
-            maxGapLength.Should().Be(0);
+            // Act & Assert
+            AssertThatThereIsNoGap(8);
         }
 
         [Test]
@@ -51,26 +47,18 @@ namespace Codility.Lessons.Test
         public void Solution_WhenIntMax_ShouldReturnZero()
         {
             // Arrange
-            var binaryGap = new BinaryGap();
 
-            // Act
-            int maxGapLength = binaryGap.solution(Int32.MaxValue);
-
-            // Assert
-            maxGapLength.Should().Be(0);
+            // Act & Assert
+            AssertThatThereIsNoGap(Int32.MaxValue);
         }
 
         [Test]
         public void Solution_WhenMinusFive_ShouldReturnZero()
         {
             // Arrange
-            var binaryGap = new BinaryGap();
 
-            // Act
-            int maxGapLength = binaryGap.solution(-5);
-
-            // Assert
-            maxGapLength.Should().Be(0);
+            // Act & Assert
+            AssertThatThereIsNoGap(-5);
         }
 
         [Test]
