@@ -78,6 +78,32 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
+        public void Solution_WhenNIsFortyOne_ShouldReturnTwo()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(41);
+
+            // Assert
+            maxGapLength.Should().Be(2);
+        }
+
+        [Test]
+        public void Solution_WhenNIsThirtySeven_ShouldReturnTwo()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(37);
+
+            // Assert
+            maxGapLength.Should().Be(2);
+        }
+
+        [Test]
         public void ConvertToBinary_WhenZero_ShouldReturnEmpty()
         {
             // Arrange
