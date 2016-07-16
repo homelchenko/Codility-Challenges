@@ -130,6 +130,19 @@ namespace Codility.Lessons.Test
             maxGapLength.Should().Be(0);
         }
 
+        [Test]
+        public void Solution_WhenNIsMinusFive_ShouldReturnZero()
+        {
+            // Arrange
+            var binaryGap = new BinaryGap();
+
+            // Act
+            int maxGapLength = binaryGap.solution(-5);
+
+            // Assert
+            maxGapLength.Should().Be(0);
+        }
+
         private static void AssertThatThereIsNoGap(int input)
         {
             // Arrange
@@ -141,7 +154,5 @@ namespace Codility.Lessons.Test
             // Assert
             maxGapLength.Should().Be(0);
         }
-
-        // TODO: Test for negative input
     }
 }
