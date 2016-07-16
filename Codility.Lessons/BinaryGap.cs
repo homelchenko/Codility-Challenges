@@ -9,20 +9,20 @@ namespace Codility.Lessons
         {
             int gapLength = 0;
             int maxGapLength = gapLength;
-            bool isInRange = false;
+            bool isFirstOneFound = false;
 
             foreach (byte bit in ConvertToBinary(N))
             {
                 if (bit == 0)
                 {
-                    if (isInRange)
+                    if (isFirstOneFound)
                     {
                         gapLength++;
                     }
                 }
                 else
                 {
-                    isInRange = true;
+                    isFirstOneFound = true;
                     maxGapLength = Math.Max(maxGapLength, gapLength);
                     gapLength = 0;
                 }
