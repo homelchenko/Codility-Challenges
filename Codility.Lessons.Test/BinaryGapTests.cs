@@ -143,5 +143,7 @@ namespace Codility.Lessons.Test
 
         // TODO: Test for Int.Max
         // TODO: Test for negative input
+        // TODO: Test for 1000 = 0
+        // TODO: Test for 10100 = 1
     }
 }
