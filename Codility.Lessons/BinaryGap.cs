@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Codility.Lessons
 {
@@ -10,13 +11,9 @@ namespace Codility.Lessons
             int maxGapLength = gapLength;
             bool isInRange = false;
 
-            int remainder = N;
-
-            while (remainder > 0)
+            foreach (byte bit in ConvertToBinary(N))
             {
-                int modulus = remainder % 2;
-
-                if (modulus == 0)
+                if (bit == 0)
                 {
                     if (isInRange)
                     {
@@ -29,11 +26,20 @@ namespace Codility.Lessons
                     maxGapLength = Math.Max(maxGapLength, gapLength);
                     gapLength = 0;
                 }
-
-                remainder /= 2;
             }
 
             return maxGapLength;
+        }
+
+        private IEnumerable<byte> ConvertToBinary(int value)
+        {
+            int remainder = value;
+
+            while (remainder > 0)
+            {
+                yield return (byte)(remainder % 2);
+                remainder /= 2;
+            }
         }
     }
 }
