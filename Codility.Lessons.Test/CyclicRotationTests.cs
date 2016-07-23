@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 using FluentAssertions;
 
@@ -14,10 +15,10 @@ namespace Codility.Lessons.Test
             var cyclicRotation = new CyclicRotation();
 
             int[] emptyArray = new int[0];
-            int anyShiftSize = 1;
+            int anyShift = 1;
 
             // Act
-            int[] rotatedArray = cyclicRotation.Solution(emptyArray, anyShiftSize);
+            int[] rotatedArray = cyclicRotation.Solution(emptyArray, anyShift);
 
             // Assert
             rotatedArray.Should().BeEmpty();
@@ -30,13 +31,28 @@ namespace Codility.Lessons.Test
             var cyclicRotation = new CyclicRotation();
 
             int[] unitArray = new int[] { 2 };
-            int anyShiftSize = 1;
+            int anyShift = 1;
 
             // Act
-            int[] rotatedArray = cyclicRotation.Solution(unitArray, anyShiftSize);
+            int[] rotatedArray = cyclicRotation.Solution(unitArray, anyShift);
 
             // Assert
             rotatedArray.Should().BeEquivalentTo(unitArray);
+        }
+
+        [Test]
+        public void Solution_WhenShiftIsNegative_ShouldRaiseException()
+        {
+            // Arrange
+            var cyclicRotation = new CyclicRotation();
+
+            int[] emptyArray = new int[0];
+            int negativeShift = -1;
+
+            Action rotateAction = () => cyclicRotation.Solution(emptyArray, negativeShift);
+
+            // Act & Assert
+            rotateAction.ShouldThrow<ArgumentOutOfRangeException>();
         }
     }
 }
