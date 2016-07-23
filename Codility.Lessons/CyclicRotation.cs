@@ -23,15 +23,21 @@ namespace Codility.Lessons
                 return A;
             }
 
-            for (int k = 1; k <= minimalShift; k++)
+            int[] olderItemsArray = new int[minimalShift];
+            for (int k = 0; k < minimalShift; k++)
             {
-                int lastElement = A[A.Length - 1];
-                for (int i = A.Length - 1; i > 0; i--)
-                {
-                    A[i] = A[i - 1];
-                }
+                olderItemsArray[k] = A[A.Length - minimalShift + k];
+            }
 
-                A[0] = lastElement;
+            int remainingLength = A.Length - minimalShift;
+            for (int i = remainingLength - 1; i >= 0; i--)
+            {
+                A[i + minimalShift] = A[i];
+            }
+
+            for (int k = 0; k < minimalShift; k++)
+            {
+                A[k] = olderItemsArray[k];
             }
 
             return A;
