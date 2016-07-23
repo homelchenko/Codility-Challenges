@@ -22,5 +22,21 @@ namespace Codility.Lessons.Test
             // Assert
             rotatedArray.Should().BeEmpty();
         }
+
+        [Test]
+        public void Solution_WhenUnitArray_ShouldReturnUnitArray()
+        {
+            // Arrange
+            var cyclicRotation = new CyclicRotation();
+
+            int[] unitArray = new int[] { 2 };
+            int anyShiftSize = 1;
+
+            // Act
+            int[] rotatedArray = cyclicRotation.Solution(unitArray, anyShiftSize);
+
+            // Assert
+            rotatedArray.Should().BeEquivalentTo(unitArray);
+        }
     }
 }
