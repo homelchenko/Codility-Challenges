@@ -56,6 +56,21 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
+        public void Solution_WhenShiftIsMoreThan100_ShouldRaiseException()
+        {
+            // Arrange
+            var cyclicRotation = new CyclicRotation();
+
+            int[] emptyArray = new int[0];
+            int moreThan100Shift = 101;
+
+            Action rotateAction = () => cyclicRotation.Solution(emptyArray, moreThan100Shift);
+
+            // Act & Assert
+            rotateAction.ShouldThrow<ArgumentOutOfRangeException>();
+        }
+
+        [Test]
         public void Solution_WhenShiftIsZero_ShouldReturnSameArray()
         {
             // Arrange

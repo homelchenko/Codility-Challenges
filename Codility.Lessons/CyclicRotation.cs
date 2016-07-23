@@ -6,7 +6,7 @@ namespace Codility.Lessons
     {
         public int[] Solution(int[] A, int shift)
         {
-            if (shift < 0)
+            if (shift < 0 || shift > 100)
             {
                 throw new ArgumentOutOfRangeException();
             }
