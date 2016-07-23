@@ -14,7 +14,7 @@ namespace Codility.Lessons.Test
         public void Solution_WhenEmptyArray_ShouldReturnEmptyArray()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
             int[] emptyArray = new int[0];
             int anyShift = 1;
@@ -30,7 +30,7 @@ namespace Codility.Lessons.Test
         public void Solution_WhenUnitArray_ShouldReturnSameArray()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
             int[] unitArray = new int[] { 2 };
             int anyShift = 1;
@@ -46,7 +46,7 @@ namespace Codility.Lessons.Test
         public void Solution_WhenShiftIsNegative_ShouldRaiseException()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
             int[] emptyArray = new int[0];
             int negativeShift = -1;
@@ -61,7 +61,7 @@ namespace Codility.Lessons.Test
         public void Solution_WhenShiftIsMoreThan100_ShouldRaiseException()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
             int[] emptyArray = new int[0];
             int moreThan100ItemShift = 101;
@@ -76,7 +76,7 @@ namespace Codility.Lessons.Test
         public void Solution_WhenShiftIsZero_ShouldReturnSameArray()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
             int[] array = new int[] { -1, 3, -5, 2, -4 };
             int zeroShift = 0;
@@ -92,9 +92,8 @@ namespace Codility.Lessons.Test
         public void Solution_WhenShiftIsOne_ShouldRotationHappen()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
-            // TODO: Rename to oneItemShift
             int oneItemShift = 1;
 
             int[] array = new [] { -1, 3, -5, 2, -4 };
@@ -110,7 +109,7 @@ namespace Codility.Lessons.Test
         public void Solution_WhenShiftIsTwo_ShouldRotationHappen()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
             int twoItemShift = 2;
 
@@ -127,7 +126,7 @@ namespace Codility.Lessons.Test
         public void Solution_WhenShiftIsMoreThanArrayLength_ShouldRotationHappen()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
             int shift = 7;
 
@@ -144,7 +143,7 @@ namespace Codility.Lessons.Test
         public void Solution_WhenShiftIsSomeTimesArrayLength_ShouldRotationHappen()
         {
             // Arrange
-            var cyclicRotation = new CyclicRotation();
+            CyclicRotation cyclicRotation = CreateCyclicRotation();
 
             int shift = 10;
 
@@ -154,6 +153,11 @@ namespace Codility.Lessons.Test
             int[] rotatedArray = cyclicRotation.Solution(array, shift);
 
             rotatedArray.Should().Be(array);
+        }
+
+        private static CyclicRotation CreateCyclicRotation()
+        {
+            return new CyclicRotation();
         }
     }
 }
