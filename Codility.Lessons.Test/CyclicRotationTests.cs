@@ -54,5 +54,21 @@ namespace Codility.Lessons.Test
             // Act & Assert
             rotateAction.ShouldThrow<ArgumentOutOfRangeException>();
         }
+
+        [Test]
+        public void Solution_WhenShiftIsZero_ShouldReturnSameArray()
+        {
+            // Arrange
+            var cyclicRotation = new CyclicRotation();
+
+            int[] array = new int[] { -1, 3, -5, 2, -4 };
+            int zeroShift = 0;
+
+            // Act
+            int[] rotatedArray = cyclicRotation.Solution(array, zeroShift);
+
+            // Act 
+            rotatedArray.Should().BeEquivalentTo(array);
+        }
     }
 }
