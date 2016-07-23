@@ -19,13 +19,13 @@ namespace Codility.Lessons
                 return A;
             }
 
-            int tempSpace = A[A.Length - 1];
+            int lastElement = A[A.Length - 1];
             for (int i = A.Length - 1; i > 0; i--)
             {
                 A[i] = A[i - 1];
             }
 
-            A[0] = tempSpace;
+            A[0] = lastElement;
 
             return A;
         }
