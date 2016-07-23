@@ -85,5 +85,22 @@ namespace Codility.Lessons.Test
             // Act 
             rotatedArray.Should().BeEquivalentTo(array);
         }
+
+        [Test]
+        public void Solution_WhenShiftIsOne_ShouldRotationHappen()
+        {
+            // Arrange
+            var cyclicRotation = new CyclicRotation();
+
+            int unitShift = 1;
+
+            int[] array = new [] { -1, 3, -5, 2, -4 };
+            
+            // Act
+            int[] rotatedArray = cyclicRotation.Solution(array, unitShift);
+
+            // Assert
+            rotatedArray.Should().BeEquivalentTo(new int[] { -4, -1, 3, -5, 2 } );
+        }
     }
 }

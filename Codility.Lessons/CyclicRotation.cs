@@ -11,6 +11,9 @@ namespace Codility.Lessons
                 throw new ArgumentOutOfRangeException();
             }
 
+            if (A.Length == 0)
+                return new int[0];
+
             if (A.Length == 1)
                 return new int[] { A[0] };
 
@@ -21,7 +24,15 @@ namespace Codility.Lessons
                 return rotated;
             }
 
-            return new int[0];
+            int tempSpace = A[A.Length - 1];
+            for (int i = A.Length - 1; i > 0; i--)
+            {
+                A[i] = A[i - 1];
+            }
+
+            A[0] = tempSpace;
+
+            return A;
         }
     }
 }
