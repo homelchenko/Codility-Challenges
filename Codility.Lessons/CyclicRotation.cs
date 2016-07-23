@@ -16,9 +16,7 @@ namespace Codility.Lessons
 
             if (shift == 0)
             {
-                int[] rotated = new int[A.Length];
-                Array.Copy(A, rotated, A.Length);
-                return rotated;
+                return A;
             }
 
             int tempSpace = A[A.Length - 1];
