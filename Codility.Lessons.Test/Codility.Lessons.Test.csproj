@@ -64,6 +64,10 @@
       <Project>{7dfb9ccd-a50d-4822-aeb9-0597bf3304e5}</Project>
       <Name>Codility.Lessons</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Codility.Test.Extensions.FluentAssertions\Codility.Test.Extensions.FluentAssertions.csproj">
+      <Project>{9AE72537-395E-497E-9DF8-8B51E4BEA6C2}</Project>
+      <Name>Codility.Test.Extensions.FluentAssertions</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

@@ -3,6 +3,8 @@ using NUnit.Framework;
 
 using FluentAssertions;
 
+using Codility.Test.Extensions.FluentAssertions;
+
 namespace Codility.Lessons.Test
 {
     [TestFixture]
@@ -158,11 +160,7 @@ namespace Codility.Lessons.Test
             // Act
             int[] rotatedArray = cyclicRotation.Solution(array, shift);
 
-            // Assert
-            rotatedArray.Should()
-                .HaveCount(5)
-                .And.ContainInOrder(array);
+            rotatedArray.Should().Be(array);
         }
-
     }
 }
