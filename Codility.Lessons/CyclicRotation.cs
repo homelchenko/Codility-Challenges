@@ -16,12 +16,12 @@ namespace Codility.Lessons
                 return A;
             }
 
-            if (shift == 0)
+            int minimalShift = shift % A.Length;
+
+            if (minimalShift == 0)
             {
                 return A;
             }
-
-            int minimalShift = shift % A.Length;
 
             for (int k = 1; k <= minimalShift; k++)
             {

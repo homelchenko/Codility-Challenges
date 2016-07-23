@@ -145,5 +145,25 @@ namespace Codility.Lessons.Test
                 .HaveCount(5)
                 .And.ContainInOrder(new int[] { 2, -4, -1, 3, -5 });
         }
+
+        [Test]
+        public void Solution_WhenShiftIsSomeTimesArrayLength_ShouldRotationHappen()
+        {
+            // Arrange
+            var cyclicRotation = new CyclicRotation();
+
+            int shift = 10;
+
+            int[] array = new[] { -1, 3, -5, 2, -4 };
+
+            // Act
+            int[] rotatedArray = cyclicRotation.Solution(array, shift);
+
+            // Assert
+            rotatedArray.Should()
+                .HaveCount(5)
+                .And.ContainInOrder(array);
+        }
+
     }
 }
