@@ -26,7 +26,7 @@ namespace Codility.Lessons.Test
 
         // TODO: Use language 'ShouldReturnSameArray'
         [Test]
-        public void Solution_WhenUnitArray_ShouldReturnUnitArray()
+        public void Solution_WhenUnitArray_ShouldReturnSameArray()
         {
             // Arrange
             var cyclicRotation = new CyclicRotation();
