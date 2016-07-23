@@ -12,7 +12,9 @@ namespace Codility.Lessons
             }
 
             if (A.Length == 0 || A.Length == 1)
+            {
                 return A;
+            }
 
             if (shift == 0)
             {
