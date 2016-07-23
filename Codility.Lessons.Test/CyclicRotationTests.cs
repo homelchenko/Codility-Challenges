@@ -62,9 +62,9 @@ namespace Codility.Lessons.Test
             var cyclicRotation = new CyclicRotation();
 
             int[] emptyArray = new int[0];
-            int moreThan100Shift = 101;
+            int moreThan100ItemShift = 101;
 
-            Action rotateAction = () => cyclicRotation.Solution(emptyArray, moreThan100Shift);
+            Action rotateAction = () => cyclicRotation.Solution(emptyArray, moreThan100ItemShift);
 
             // Act & Assert
             rotateAction.ShouldThrow<ArgumentOutOfRangeException>();
@@ -93,12 +93,12 @@ namespace Codility.Lessons.Test
             var cyclicRotation = new CyclicRotation();
 
             // TODO: Rename to oneItemShift
-            int unitShift = 1;
+            int oneItemShift = 1;
 
             int[] array = new [] { -1, 3, -5, 2, -4 };
             
             // Act
-            int[] rotatedArray = cyclicRotation.Solution(array, unitShift);
+            int[] rotatedArray = cyclicRotation.Solution(array, oneItemShift);
 
             // Assert
             rotatedArray.Should()
