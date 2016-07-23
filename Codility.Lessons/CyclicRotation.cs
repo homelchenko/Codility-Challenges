@@ -21,7 +21,9 @@ namespace Codility.Lessons
                 return A;
             }
 
-            for (int k = 1; k <= shift; k++)
+            int minimalShift = shift % A.Length;
+
+            for (int k = 1; k <= minimalShift; k++)
             {
                 int lastElement = A[A.Length - 1];
                 for (int i = A.Length - 1; i > 0; i--)
