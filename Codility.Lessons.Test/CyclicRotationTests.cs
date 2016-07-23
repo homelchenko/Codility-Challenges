@@ -24,6 +24,7 @@ namespace Codility.Lessons.Test
             rotatedArray.Should().BeEmpty();
         }
 
+        // TODO: Use language 'ShouldReturnSameArray'
         [Test]
         public void Solution_WhenUnitArray_ShouldReturnUnitArray()
         {
@@ -92,6 +93,7 @@ namespace Codility.Lessons.Test
             // Arrange
             var cyclicRotation = new CyclicRotation();
 
+            // TODO: Rename to oneItemShift
             int unitShift = 1;
 
             int[] array = new [] { -1, 3, -5, 2, -4 };
@@ -100,7 +102,29 @@ namespace Codility.Lessons.Test
             int[] rotatedArray = cyclicRotation.Solution(array, unitShift);
 
             // Assert
-            rotatedArray.Should().BeEquivalentTo(new int[] { -4, -1, 3, -5, 2 } );
+            rotatedArray.Should()
+                .HaveCount(5)
+                .And.ContainInOrder(new int[] { -4, -1, 3, -5, 2 });
+        }
+
+        [Test]
+        public void Solution_WhenShiftIsTwo_ShouldRotationHappen()
+        {
+            // Arrange
+            var cyclicRotation = new CyclicRotation();
+
+            int twoItemShift = 2;
+
+            int[] array = new[] { -1, 3, -5, 2, -4 };
+
+            // Act
+            int[] rotatedArray = cyclicRotation.Solution(array, twoItemShift);
+
+            // Assert
+            // TODO: Extract method
+            rotatedArray.Should()
+                .HaveCount(5)
+                .And.ContainInOrder(new int[] { 2, -4, -1, 3, -5 });
         }
     }
 }

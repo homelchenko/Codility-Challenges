@@ -21,13 +21,16 @@ namespace Codility.Lessons
                 return A;
             }
 
-            int lastElement = A[A.Length - 1];
-            for (int i = A.Length - 1; i > 0; i--)
+            for (int k = 1; k <= shift; k++)
             {
-                A[i] = A[i - 1];
-            }
+                int lastElement = A[A.Length - 1];
+                for (int i = A.Length - 1; i > 0; i--)
+                {
+                    A[i] = A[i - 1];
+                }
 
-            A[0] = lastElement;
+                A[0] = lastElement;
+            }
 
             return A;
         }
