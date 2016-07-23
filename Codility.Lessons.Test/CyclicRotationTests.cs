@@ -24,7 +24,6 @@ namespace Codility.Lessons.Test
             rotatedArray.Should().BeEmpty();
         }
 
-        // TODO: Use language 'ShouldReturnSameArray'
         [Test]
         public void Solution_WhenUnitArray_ShouldReturnSameArray()
         {
