@@ -39,7 +39,7 @@ namespace Codility.Lessons.Test
             int[] rotatedArray = cyclicRotation.Solution(unitArray, anyShift);
 
             // Assert
-            rotatedArray.Should().BeEquivalentTo(unitArray);
+            rotatedArray.Should().Be(unitArray);
         }
 
         [Test]
@@ -85,7 +85,7 @@ namespace Codility.Lessons.Test
             int[] rotatedArray = cyclicRotation.Solution(array, zeroShift);
 
             // Act 
-            rotatedArray.Should().BeEquivalentTo(array);
+            rotatedArray.Should().Be(array);
         }
 
         [Test]
@@ -103,9 +103,7 @@ namespace Codility.Lessons.Test
             int[] rotatedArray = cyclicRotation.Solution(array, oneItemShift);
 
             // Assert
-            rotatedArray.Should()
-                .HaveCount(5)
-                .And.ContainInOrder(new int[] { -4, -1, 3, -5, 2 });
+            rotatedArray.Should().Be(new int[] { -4, -1, 3, -5, 2 });
         }
 
         [Test]
@@ -122,10 +120,7 @@ namespace Codility.Lessons.Test
             int[] rotatedArray = cyclicRotation.Solution(array, twoItemShift);
 
             // Assert
-            // TODO: Extract method
-            rotatedArray.Should()
-                .HaveCount(5)
-                .And.ContainInOrder(new int[] { 2, -4, -1, 3, -5 });
+            rotatedArray.Should().Be(new int[] { 2, -4, -1, 3, -5 });
         }
 
         [Test]
@@ -142,9 +137,7 @@ namespace Codility.Lessons.Test
             int[] rotatedArray = cyclicRotation.Solution(array, shift);
 
             // Assert
-            rotatedArray.Should()
-                .HaveCount(5)
-                .And.ContainInOrder(new int[] { 2, -4, -1, 3, -5 });
+            rotatedArray.Should().Be(new int[] { 2, -4, -1, 3, -5 });
         }
 
         [Test]
