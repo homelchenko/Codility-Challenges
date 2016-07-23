@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codility.Lessons.Test", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codility.Challenges.Test", "Codility.Challenges.Test\Codility.Challenges.Test.csproj", "{CA14E217-DF24-45F6-B07C-2883D26B62CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codility.Test.Extensions.FluentAssertions", "Codility.Test.Extensions.FluentAssertions\Codility.Test.Extensions.FluentAssertions.csproj", "{9AE72537-395E-497E-9DF8-8B51E4BEA6C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CA14E217-DF24-45F6-B07C-2883D26B62CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA14E217-DF24-45F6-B07C-2883D26B62CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA14E217-DF24-45F6-B07C-2883D26B62CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE72537-395E-497E-9DF8-8B51E4BEA6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE72537-395E-497E-9DF8-8B51E4BEA6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE72537-395E-497E-9DF8-8B51E4BEA6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE72537-395E-497E-9DF8-8B51E4BEA6C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
