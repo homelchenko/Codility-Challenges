@@ -11,11 +11,8 @@ namespace Codility.Lessons
                 throw new ArgumentOutOfRangeException();
             }
 
-            if (A.Length == 0)
-                return new int[0];
-
-            if (A.Length == 1)
-                return new int[] { A[0] };
+            if (A.Length == 0 || A.Length == 1)
+                return A;
 
             if (shift == 0)
             {
