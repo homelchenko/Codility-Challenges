@@ -44,6 +44,18 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
+        public void FindUnpaired_WhenArrayContainsThreeElementsAndUnpairedIsTheFirstOne_ShouldReturnUnpaired()
+        {
+            // Arrange
+            var expected = 7;
+
+            int[] inputArray = new int[3] { 7, 2, 2};
+
+            // Act & Assert
+            AssertFindUnpairedValueReturns(inputArray, expected);
+        }
+
+        [Test]
         // TOOD: Fix typo: '...ThreeElements...'
         public void FindUnpaired_WhenArrayContainsThreeElementAndUnpairedIsInTheMiddle_ShouldReturnUnpaired()
         {
