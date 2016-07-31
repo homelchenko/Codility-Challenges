@@ -56,8 +56,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        // TOOD: Fix typo: '...ThreeElements...'
-        public void FindUnpaired_WhenArrayContainsThreeElementAndUnpairedIsInTheMiddle_ShouldReturnUnpaired()
+        public void FindUnpaired_WhenArrayContainsThreeElementsAndUnpairedIsInTheMiddle_ShouldReturnUnpaired()
         {
             // Arrange
             var expected = 7;
