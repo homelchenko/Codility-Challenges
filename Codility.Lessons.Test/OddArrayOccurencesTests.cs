@@ -37,7 +37,23 @@ namespace Codility.Lessons.Test
             // Arrange
             OddArrayOccurences arrayOccurences = CreateOddArrayOccurences();
 
+            // TODO: Rename the variable to 'singleItemedArray'
             int[] inputArray = new int[1] { 7 };
+            
+            // Act
+            int unpairedValue = arrayOccurences.FindUnpaired(inputArray);
+
+            // Assert
+            unpairedValue.Should().Be(7);
+        }
+
+        [Test]
+        public void FindUnpaired_WhenArrayContainsThreeElementAndUnpairedIsInTheMiddle_ShouldReturnUnpaired()
+        {
+            // Arrange
+            OddArrayOccurences arrayOccurences = CreateOddArrayOccurences();
+
+            int[] inputArray = new int[3] { 2, 7, 2 };
             
             // Act
             int unpairedValue = arrayOccurences.FindUnpaired(inputArray);
