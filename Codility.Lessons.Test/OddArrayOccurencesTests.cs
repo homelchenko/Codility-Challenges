@@ -80,7 +80,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void FindUnpaired_WhenArrayContainsFiveElementsAndTwoPairsAndUnpairedElementAtTheEnd_ShouldReturnUnpaired()
+        public void FindUnpaired_WhenArrayContainsFiveElementsAndTwoDistinctPairsAndUnpairedElementAtTheEnd_ShouldReturnUnpaired()
         {
             // Arrange
             var expected = 7;
@@ -92,7 +92,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void FindUnpaired_WhenArrayContainsFiveElementsAndTwoPairsAndUnpairedElementInTheMiddle_ShouldReturnUnpaired()
+        public void FindUnpaired_WhenArrayContainsFiveElementsAndTwoDistinctPairsAndUnpairedElementInTheMiddle_ShouldReturnUnpaired()
         {
             // Arrange
             var expected = 7;
