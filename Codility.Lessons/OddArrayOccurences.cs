@@ -16,7 +16,7 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            return Int32.MinValue;
+            return array[0];
         }
     }
 }

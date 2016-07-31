@@ -31,6 +31,21 @@ namespace Codility.Lessons.Test
             AssertThrowExceptionWithInputArray(arrayOfEvenLength);
         }
 
+        [Test]
+        public void FindUpaired_WhenArrayContainsSingleElement_ShouldReturnSingleElement()
+        {
+            // Arrange
+            OddArrayOccurences arrayOccurences = CreateOddArrayOccurences();
+
+            int[] inputArray = new int[1] { 7 };
+            
+            // Act
+            int unpairedValue = arrayOccurences.FindUnpaired(inputArray);
+
+            // Assert
+            unpairedValue.Should().Be(7);
+        }
+
         private static void AssertThrowExceptionWithInputArray(int[] arrayOfEvenLength)
         {
             // Arrange
