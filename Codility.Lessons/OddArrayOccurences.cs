@@ -4,6 +4,8 @@ namespace Codility.Lessons
 {
     public class OddArrayOccurences
     {
+        public const int Duplicate = 0;
+
         public int solution(int[] A)
         {
             return FindUnpaired(A);
@@ -20,6 +22,9 @@ namespace Codility.Lessons
             for (int i = 0; i < array.Length; i++)
             {
                 int currentItem = array[i];
+                if (currentItem == Duplicate)
+                    continue;
+
                 bool isFound = false;
 
                 for (int j = i + 1; j < array.Length; j++)
@@ -27,6 +32,7 @@ namespace Codility.Lessons
                     if (currentItem == array[j])
                     {
                         isFound = true;
+                        array[j] = Duplicate;
                         break;
                     }
                 }
