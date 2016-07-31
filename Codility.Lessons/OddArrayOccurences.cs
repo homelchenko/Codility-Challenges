@@ -11,7 +11,7 @@ namespace Codility.Lessons
 
         public int FindUnpaired(int[] array)
         {
-            if (array.Length == 0)
+            if (array.Length == 0 || array.Length % 2 == 0)
             {
                 throw new ArgumentException();
             }
