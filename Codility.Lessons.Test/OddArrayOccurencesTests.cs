@@ -79,6 +79,18 @@ namespace Codility.Lessons.Test
             AssertFindUnpairedValueReturns(inputArray, expected);
         }
 
+        [Test]
+        public void FindUnpaired_WhenArrayContainsThreeElementAndAllUnpaired_ShouldReturnFirstElement()
+        {
+            // Arrange
+            var expected = 7;
+
+            int[] inputArray = new int[3] { 7, 5, 3 };
+
+            // Act & Assert
+            AssertFindUnpairedValueReturns(inputArray, expected);
+        }
+
         private static void AssertFindUnpairedValueReturns(int[] inputArray, int expected)
         {
             OddArrayOccurences arrayOccurences = CreateOddArrayOccurences();
