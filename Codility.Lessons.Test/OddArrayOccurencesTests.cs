@@ -14,7 +14,9 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] emptyArray = new int[0];
 
-            Action findUnpairedAction = () => new OddArrayOccurences().FindUnpaired(emptyArray);
+            var arrayOccurences = new OddArrayOccurences();
+
+            Action findUnpairedAction = () => arrayOccurences.FindUnpaired(emptyArray);
 
             // Act & Assert
             findUnpairedAction.ShouldThrow<ArgumentException>();
@@ -26,7 +28,9 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] arrayOfEvenLength = new int[4];
 
-            Action findUnpairedAction = () => new OddArrayOccurences().FindUnpaired(arrayOfEvenLength);
+            var arrayOccurences = new OddArrayOccurences();
+
+            Action findUnpairedAction = () => arrayOccurences.FindUnpaired(arrayOfEvenLength);
 
             // Act & Assert
             findUnpairedAction.ShouldThrow<ArgumentException>();
