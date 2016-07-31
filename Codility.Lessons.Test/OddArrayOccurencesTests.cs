@@ -104,6 +104,18 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
+        public void FindUnpaired_WhenArrayContainsFiveElementAndTwoSamePairsAndUnpairedElementAtTheEnd_ShouldReturnUnpaired()
+        {
+            // Arrange
+            var expected = 7;
+
+            int[] inputArray = new int[5] { 2, 2, 2, 2, 7 };
+
+            // Act & Assert
+            AssertFindUnpairedValueReturns(inputArray, expected);
+        }
+
+        [Test]
         public void FindUnpaired_WhenArrayContainsThreeElementAndAllUnpaired_ShouldReturnFirstElement()
         {
             // Arrange
