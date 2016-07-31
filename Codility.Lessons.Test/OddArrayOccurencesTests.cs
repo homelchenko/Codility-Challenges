@@ -35,13 +35,12 @@ namespace Codility.Lessons.Test
         public void FindUpaired_WhenArrayContainsSingleElement_ShouldReturnSingleElement()
         {
             // Arrange
-            // TODO: Rename the variable to 'singleItemedArray'
             var expected = 7;
 
-            int[] inputArray = new int[1] { 7 };
+            int[] singleItemedArray = new int[1] { 7 };
 
             // Act & Assert
-            AssertFindUnpairedValueReturns(inputArray, expected);
+            AssertFindUnpairedValueReturns(singleItemedArray, expected);
         }
 
         [Test]
