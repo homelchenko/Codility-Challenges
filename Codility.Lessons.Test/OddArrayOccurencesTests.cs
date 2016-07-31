@@ -5,6 +5,9 @@ using FluentAssertions;
 
 namespace Codility.Lessons.Test
 {
+    // TODO: Test with long arrays
+    // TODO: Test with big numbers
+
     [TestFixture]
     public class OddArrayOccurencesTests
     {
