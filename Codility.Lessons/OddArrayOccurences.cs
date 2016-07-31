@@ -16,6 +16,7 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
+            // TODO: This should be O(n) in the worst case
             for (int i = 0; i < array.Length; i++)
             {
                 int currentItem = array[i];
