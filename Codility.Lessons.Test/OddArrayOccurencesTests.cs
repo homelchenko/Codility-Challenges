@@ -35,31 +35,36 @@ namespace Codility.Lessons.Test
         public void FindUpaired_WhenArrayContainsSingleElement_ShouldReturnSingleElement()
         {
             // Arrange
-            OddArrayOccurences arrayOccurences = CreateOddArrayOccurences();
-
             // TODO: Rename the variable to 'singleItemedArray'
-            int[] inputArray = new int[1] { 7 };
-            
-            // Act
-            int unpairedValue = arrayOccurences.FindUnpaired(inputArray);
+            var expected = 7;
 
-            // Assert
-            unpairedValue.Should().Be(7);
+            int[] inputArray = new int[1] { 7 };
+
+            // Act & Assert
+            AssertFindUnpairedValueReturns(inputArray, expected);
         }
 
         [Test]
         public void FindUnpaired_WhenArrayContainsThreeElementAndUnpairedIsInTheMiddle_ShouldReturnUnpaired()
         {
             // Arrange
-            OddArrayOccurences arrayOccurences = CreateOddArrayOccurences();
+            var expected = 7;
 
             int[] inputArray = new int[3] { 2, 7, 2 };
-            
+
+            // Act & Assert
+            AssertFindUnpairedValueReturns(inputArray, expected);
+        }
+
+        private static void AssertFindUnpairedValueReturns(int[] inputArray, int expected)
+        {
+            OddArrayOccurences arrayOccurences = CreateOddArrayOccurences();
+
             // Act
             int unpairedValue = arrayOccurences.FindUnpaired(inputArray);
 
             // Assert
-            unpairedValue.Should().Be(7);
+            unpairedValue.Should().Be(expected);
         }
 
         private static void AssertThrowExceptionWithInputArray(int[] arrayOfEvenLength)
