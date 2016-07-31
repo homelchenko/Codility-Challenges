@@ -80,6 +80,18 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
+        public void FindUnpaired_WhenArrayContainsThreeElementAndUnpairedEqualsPaired_ShouldReturnUnpaired()
+        {
+            // Arrange
+            var expected = 7;
+
+            int[] inputArray = new int[3] { 7, 7, 7 };
+
+            // Act & Assert
+            AssertFindUnpairedValueReturns(inputArray, expected);
+        }
+
+        [Test]
         public void FindUnpaired_WhenArrayContainsFiveElementsAndTwoDistinctPairsAndUnpairedElementAtTheEnd_ShouldReturnUnpaired()
         {
             // Arrange
