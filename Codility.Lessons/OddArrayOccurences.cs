@@ -18,32 +18,13 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            // TODO: This should be O(n) in the worst case
+            int sum = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                int currentItem = array[i];
-                if (currentItem == Duplicate)
-                    continue;
-
-                bool isFound = false;
-
-                for (int j = i + 1; j < array.Length; j++)
-                {
-                    if (currentItem == array[j])
-                    {
-                        isFound = true;
-                        array[j] = Duplicate;
-                        break;
-                    }
-                }
-
-                if (!isFound)
-                {
-                    return currentItem;
-                }
+                sum ^= array[i];
             }
 
-            return array[0];
+            return sum;
         }
     }
 }
