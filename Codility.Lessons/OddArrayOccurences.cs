@@ -22,7 +22,13 @@ namespace Codility.Lessons
                 sum ^= array[i];
             }
 
-            return sum;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == sum)
+                    return sum;
+            }
+
+            throw new ArgumentException();
         }
     }
 }

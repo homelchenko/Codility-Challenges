@@ -128,15 +128,13 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void FindUnpaired_WhenArrayContainsThreeElementAndAllUnpaired_ShouldReturnFirstElement()
+        public void FindUnpaired_WhenArrayContainsThreeElementAndAllUnpaired_ShouldThrow()
         {
             // Arrange
-            var expected = 7;
-
             int[] inputArray = new int[3] { 7, 5, 3 };
 
             // Act & Assert
-            AssertFindUnpairedValueReturns(inputArray, expected);
+            AssertThrowExceptionWithInputArray(inputArray);
         }
 
         private static void AssertFindUnpairedValueReturns(int[] inputArray, int expected)
