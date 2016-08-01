@@ -4,8 +4,6 @@ namespace Codility.Lessons
 {
     public class OddArrayOccurences
     {
-        public const int Duplicate = 0;
-
         public int solution(int[] A)
         {
             return FindUnpaired(A);
