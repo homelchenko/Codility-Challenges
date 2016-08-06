@@ -41,6 +41,19 @@ namespace Codility.Lessons.Test
             equilibrium.Should().Be(0);
         }
 
+        [Test]
+        public void FindEquilibirium_WhenArrayContainsTwoElementAndSecondDifferenceIsSmallerThanFirstOne_ShouldReturnOne()
+        {
+            // Arrange
+            int[] array = new int[2] { -1, 2 };
+
+            // Act
+            int equilibrium = new TapeEquilibrium().FindEquilibrium(array);
+
+            // Arrange
+            equilibrium.Should().Be(1);
+        }
+
         private static void AssertFindEquilibriumThrows(int[] array)
         {
             // Arrange
