@@ -29,13 +29,13 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void FindEquilibrium_WhenArrayContainsTwoElementAndSecondDifferenceIsGreaterThanFirstOne_ShouldReturnZero()
+        public void FindEquilibrium_WhenArrayContainsTwoElementAndSecondDifferenceIsGreaterThanFirstOne_ShouldReturnOne()
         {
             // Arrange
             int[] array = new int[2] { 1, -2 };
             
             // Act & Assert
-            AssertEquilibriumIs(array, 0);
+            AssertEquilibriumIs(array, 1);
         }
 
         [Test]
@@ -59,33 +59,33 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void FindEquilibrium_WhenDifferencesAreTheSame_ShouldReturnZero()
+        public void FindEquilibrium_WhenDifferencesAreTheSame_ShouldReturnOne()
         {
             // Arrange
             int[] array = new int[2] { 0, 1 };
+
+            // Act & Assert
+            AssertEquilibriumIs(array, 1);
+        }
+
+        [Test]
+        public void FindEquilibrium_WhenMaxLengthOfArrayAndMaxValues_ShouldReturnZero()
+        {
+            // Arrange
+            int[] array = CreateMaxLengthArrayOfValues(1000);
 
             // Act & Assert
             AssertEquilibriumIs(array, 0);
         }
 
         [Test]
-        public void FindEquilibrium_WhenMaxLengthOfArrayAndMaxValues_ShouldReturnMiddlePoint()
-        {
-            // Arrange
-            int[] array = CreateMaxLengthArrayOfValues(1000);
-
-            // Act & Assert
-            AssertEquilibriumIs(array, 50000);
-        }
-
-        [Test]
-        public void FindEquilibrium_WhenMaxLengthOfArrayAndMinValues_ShouldReturnMiddlePoint()
+        public void FindEquilibrium_WhenMaxLengthOfArrayAndMinValues_ShouldReturnZero()
         {
             // Arrange
             int[] array = CreateMaxLengthArrayOfValues(-1000);
 
             // Act & Assert
-            AssertEquilibriumIs(array, 50000);
+            AssertEquilibriumIs(array, 0);
         }
 
         private static int[] CreateMaxLengthArrayOfValues(int value)

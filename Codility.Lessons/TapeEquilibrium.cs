@@ -22,8 +22,6 @@ namespace Codility.Lessons
                 sequenceSum += array[i];
             }
 
-            int equilibriumIndex = 0;
-
             int leftSum = 0;
             int rightSum = sequenceSum;
             int equilibriumDifference = Math.Abs(leftSum - rightSum);
@@ -37,11 +35,10 @@ namespace Codility.Lessons
                 if (equilibriumDifference > difference)
                 {
                     equilibriumDifference = difference;
-                    equilibriumIndex = i;
                 }
             }
 
-            return equilibriumIndex;
+            return equilibriumDifference;
         }
     }
 }
