@@ -89,6 +89,24 @@ namespace Codility.Lessons.Test
             AssertEquilibriumIs(array, 50000);
         }
 
+        [Test]
+        public void FindEquilibrium_WhenMaxLengthOfArrayAndMinValues_ShouldReturnMiddlePoint()
+        {
+            // Arrange
+            int minValue = -1000;
+            int maxLength = 100000;
+
+            int[] array = new int[maxLength];
+
+            for (int i = 0; i < maxLength; i++)
+            {
+                array[i] = minValue;
+            }
+
+            // Act & Assert
+            AssertEquilibriumIs(array, 50000);
+        }
+
         private static void AssertEquilibriumIs(int[] array, int expected)
         {
             // Act
