@@ -14,10 +14,8 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] emptyArray = new int[0];
 
-            Action findEquilibriumAction = () => new TapeEquilibrium().FindEquilibrium(emptyArray);
-
             // Act & Assert
-            findEquilibriumAction.ShouldThrow<ArgumentOutOfRangeException>();
+            AssertFindEquilibriumThrows(emptyArray);
         }
 
         [Test]
@@ -26,7 +24,14 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] singleItemArray = new int[1] { 5 };
 
-            Action findEquilibrium = () => new TapeEquilibrium().FindEquilibrium(singleItemArray);
+            // Act & Assert
+            AssertFindEquilibriumThrows(singleItemArray);
+        }
+
+        private static void AssertFindEquilibriumThrows(int[] array)
+        {
+            // Arrange
+            Action findEquilibrium = () => new TapeEquilibrium().FindEquilibrium(array);
 
             // Act & Assert
             findEquilibrium.ShouldThrow<ArgumentOutOfRangeException>();
