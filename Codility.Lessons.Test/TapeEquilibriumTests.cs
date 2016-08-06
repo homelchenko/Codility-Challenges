@@ -28,6 +28,19 @@ namespace Codility.Lessons.Test
             AssertFindEquilibriumThrows(singleItemArray);
         }
 
+        [Test]
+        public void FindEquilibrium_WhenArrayContainsTwoElementAndSecondDifferenceIsGreaterThanFirstOne_ShouldReturnZero()
+        {
+            // Arrange
+            int[] array = new int[2] { 1, -2 };
+            
+            // Act
+            int equilibrium = new TapeEquilibrium().FindEquilibrium(array);
+
+            // Arrange
+            equilibrium.Should().Be(0);
+        }
+
         private static void AssertFindEquilibriumThrows(int[] array)
         {
             // Arrange
