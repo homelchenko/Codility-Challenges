@@ -32,35 +32,47 @@ namespace Codility.Lessons.Test
         public void FindEquilibrium_WhenArrayContainsTwoElementAndSecondDifferenceIsGreaterThanFirstOne_ShouldReturnZero()
         {
             // Arrange
+            int expected = 0;
+
             int[] array = new int[2] { 1, -2 };
             
-            // Act
-            int equilibrium = new TapeEquilibrium().FindEquilibrium(array);
-
-            // Arrange
-            equilibrium.Should().Be(0);
+            // Act & Assert
+            AssertEquilibriumIs(array, expected);
         }
 
         [Test]
         public void FindEquilibirium_WhenArrayContainsTwoElementAndSecondDifferenceIsSmallerThanFirstOne_ShouldReturnOne()
         {
             // Arrange
+            int expected = 1;
+
             int[] array = new int[2] { -1, 2 };
 
+            // Act & Assert
+            AssertEquilibriumIs(array, expected);
+        }
+
+        private static void AssertEquilibriumIs(int[] array, int expected)
+        {
             // Act
-            int equilibrium = new TapeEquilibrium().FindEquilibrium(array);
+            int equilibrium = CreateTapeEquilibrium().FindEquilibrium(array);
 
             // Arrange
-            equilibrium.Should().Be(1);
+            equilibrium.Should().Be(expected);
         }
 
         private static void AssertFindEquilibriumThrows(int[] array)
         {
             // Arrange
-            Action findEquilibrium = () => new TapeEquilibrium().FindEquilibrium(array);
+            Action findEquilibrium = () => CreateTapeEquilibrium().FindEquilibrium(array);
 
             // Act & Assert
             findEquilibrium.ShouldThrow<ArgumentOutOfRangeException>();
+        }
+
+        private static TapeEquilibrium CreateTapeEquilibrium()
+        {
+            return new TapeEquilibrium();
         }
     }
 }
