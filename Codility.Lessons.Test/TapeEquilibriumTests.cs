@@ -32,24 +32,20 @@ namespace Codility.Lessons.Test
         public void FindEquilibrium_WhenArrayContainsTwoElementAndSecondDifferenceIsGreaterThanFirstOne_ShouldReturnZero()
         {
             // Arrange
-            int expected = 0;
-
             int[] array = new int[2] { 1, -2 };
             
             // Act & Assert
-            AssertEquilibriumIs(array, expected);
+            AssertEquilibriumIs(array, 0);
         }
 
         [Test]
         public void FindEquilibirium_WhenArrayContainsTwoElementAndSecondDifferenceIsSmallerThanFirstOne_ShouldReturnOne()
         {
             // Arrange
-            int expected = 1;
-
             int[] array = new int[2] { -1, -2 };
 
             // Act & Assert
-            AssertEquilibriumIs(array, expected);
+            AssertEquilibriumIs(array, 1);
         }
 
         [Test]
