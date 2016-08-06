@@ -46,7 +46,7 @@ namespace Codility.Lessons.Test
             // Arrange
             int expected = 1;
 
-            int[] array = new int[2] { -1, 2 };
+            int[] array = new int[2] { -1, -2 };
 
             // Act & Assert
             AssertEquilibriumIs(array, expected);
