@@ -52,6 +52,16 @@ namespace Codility.Lessons.Test
             AssertEquilibriumIs(array, expected);
         }
 
+        [Test]
+        public void FindEquilibrium_WhenDifferencesAreNegativeAndSecondDifferenceIsGreaterThanFirstOne_ShouldReturnOne()
+        {
+            // Arrange
+            int[] array = new int[2] { 1, 2 };
+
+            // Act & Assert
+            AssertEquilibriumIs(array, 1);
+        }
+
         private static void AssertEquilibriumIs(int[] array, int expected)
         {
             // Act

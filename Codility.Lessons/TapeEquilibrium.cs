@@ -19,21 +19,21 @@ namespace Codility.Lessons
             int sequenceSum = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                sequenceSum += 0;
+                sequenceSum += array[i];
             }
 
             int equilibriumIndex = 0;
 
             int leftSum = 0;
             int rightSum = sequenceSum;
-            int equilibriumDifference = leftSum - rightSum;
+            int equilibriumDifference = Math.Abs(leftSum - rightSum);
 
             for (int i = 1; i < array.Length; i++)
             {
                 leftSum += array[i - 1];
                 rightSum -= array[i - 1];
 
-                int difference = leftSum - rightSum;
+                int difference = Math.Abs(leftSum - rightSum);
                 if (equilibriumDifference > difference)
                 {
                     equilibriumDifference = difference;
