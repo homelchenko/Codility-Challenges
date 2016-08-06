@@ -62,6 +62,16 @@ namespace Codility.Lessons.Test
             AssertEquilibriumIs(array, 1);
         }
 
+        [Test]
+        public void FindEquilibrium_WhenDifferencesAreTheSame_ShouldReturnZero()
+        {
+            // Arrange
+            int[] array = new int[2] { 0, 1 };
+
+            // Act & Assert
+            AssertEquilibriumIs(array, 0);
+        }
+
         private static void AssertEquilibriumIs(int[] array, int expected)
         {
             // Act
