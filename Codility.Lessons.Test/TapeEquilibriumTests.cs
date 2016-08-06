@@ -19,5 +19,17 @@ namespace Codility.Lessons.Test
             // Act & Assert
             findEquilibriumAction.ShouldThrow<ArgumentOutOfRangeException>();
         }
+
+        [Test]
+        public void FindEquilibrium_WhenArrayContainsSingleElement_ShouldThrow()
+        {
+            // Arrange
+            int[] singleItemArray = new int[1] { 5 };
+
+            Action findEquilibrium = () => new TapeEquilibrium().FindEquilibrium(singleItemArray);
+
+            // Act & Assert
+            findEquilibrium.ShouldThrow<ArgumentOutOfRangeException>();
+        }
     }
 }

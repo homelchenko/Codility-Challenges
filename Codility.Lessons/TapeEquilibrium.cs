@@ -11,7 +11,7 @@ namespace Codility.Lessons
 
         public int FindEquilibrium(int[] array)
         {
-            if (array.Length == 0)
+            if (array.Length == 0 || array.Length == 1)
             {
                 throw new ArgumentOutOfRangeException();
             }
