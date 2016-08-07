@@ -24,7 +24,21 @@ namespace Codility.Lessons
                 rightSum += array[i];
             }
 
-            return Math.Abs(leftSum - rightSum);
+            int equilibriumDifference = Math.Abs(leftSum - rightSum);
+
+            for (int i = 2; i < array.Length; i++)
+            {
+                leftSum += array[i - 1];
+                rightSum -= array[i - 1];
+
+                int difference = Math.Abs(leftSum - rightSum);
+                if (equilibriumDifference > difference)
+                {
+                    equilibriumDifference = difference;
+                }
+            }
+
+            return equilibriumDifference;
         }
     }
 }
