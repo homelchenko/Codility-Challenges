@@ -78,15 +78,15 @@ namespace Codility.Lessons.Test
             AssertEquilibriumIs(array, 0);
         }
 
-        //[Test]
-        //public void FindEquilibrium_WhenMaxLengthOfArrayAndMinValues_ShouldReturnZero()
-        //{
-        //    // Arrange
-        //    int[] array = CreateMaxLengthArrayOfValues(-1000);
+        [Test]
+        public void FindEquilibrium_WhenMaxLengthOfArrayAndMinValues_ShouldReturnZero()
+        {
+            // Arrange
+            int[] array = CreateMaxLengthArrayOfValues(-1000);
 
-        //    // Act & Assert
-        //    AssertEquilibriumIs(array, 0);
-        //}
+            // Act & Assert
+            AssertEquilibriumIs(array, 0);
+        }
 
         private static int[] CreateMaxLengthArrayOfValues(int value)
         {
