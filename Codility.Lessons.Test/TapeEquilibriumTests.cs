@@ -68,45 +68,15 @@ namespace Codility.Lessons.Test
             AssertEquilibriumIs(array, 1);
         }
 
-        //[Test]
-        //public void FindEquilibrium_WhenArrayContainsTwoElement_ShouldReturnDifferenceBetweenFirstAndLast()
-        //{
-        //    // Arrange
-        //    int[] array = new int[2] { -1, 2 };
-            
-        //    // Act & Assert
-        //    AssertEquilibriumIs(array, 3);
-        //}
+        [Test]
+        public void FindEquilibrium_WhenMaxLengthOfArrayAndMaxValues_ShouldReturnZero()
+        {
+            // Arrange
+            int[] array = CreateMaxLengthArrayOfValues(1000);
 
-        //[Test]
-        //public void FindEquilibrium_WhenArrayContainsTwoElementsAndDifferenceIsNegative_ShouldReturnOppositeDifferenceBetweenFirstAndLast()
-        //{
-        //    // Arrange
-        //    int[] array = new int[2] { -1, 2 };
-
-        //    // Act & Assert
-        //    AssertEquilibriumIs(array, 3);
-        //}
-
-        //[Test]
-        //public void FindEquilibrium_WhenSeveralDiffernceAndTheyAreEqual_ShouldReturnDifference()
-        //{
-        //    // Arrange
-        //    int[] array = new int[3] { 2, 0, 2 };
-
-        //    // Act & Assert
-        //    AssertEquilibriumIs(array, 0);
-        //}
-
-        //[Test]
-        //public void FindEquilibrium_WhenMaxLengthOfArrayAndMaxValues_ShouldReturnZero()
-        //{
-        //    // Arrange
-        //    int[] array = CreateMaxLengthArrayOfValues(1000);
-
-        //    // Act & Assert
-        //    AssertEquilibriumIs(array, 0);
-        //}
+            // Act & Assert
+            AssertEquilibriumIs(array, 0);
+        }
 
         //[Test]
         //public void FindEquilibrium_WhenMaxLengthOfArrayAndMinValues_ShouldReturnZero()
