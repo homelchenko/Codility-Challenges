@@ -49,9 +49,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        // TODO: Fix typo in 'then'
-        // TODO: Fix 'Should' section to reflect we expect 1st difference
-        public void FindEquilibrium_WhenArrayContainsThreeAndFirstDifferenceIsSmallerThenSecond_ShouldReturnSecondDifference()
+        public void FindEquilibrium_WhenArrayContainsThreeAndFirstDifferenceIsSmallerThanSecond_ShouldReturnFirstDifference()
         {
             // Arrange
             int[] array = new int[3] { 9, 3, 5 };
