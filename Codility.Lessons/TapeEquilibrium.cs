@@ -16,32 +16,29 @@ namespace Codility.Lessons
                 throw new ArgumentOutOfRangeException();
             }
 
-            int[] differences = new int[array.Length - 1];
-
-            int leftSum = 0;
+            int leftSum = array[0];
             int rightSum = 0;
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 1; i < array.Length; i++)
             {
                 rightSum += array[i];
             }
 
-            for (int i = 1; i < array.Length; i++)
+            int equilibriumDifference = Math.Abs(leftSum - rightSum);
+
+            for (int i = 2; i < array.Length; i++)
             {
                 leftSum += array[i - 1];
                 rightSum -= array[i - 1];
 
-                differences[i - 1] = Math.Abs(leftSum - rightSum);
+                int difference = Math.Abs(leftSum - rightSum);
+                if (equilibriumDifference > difference)
+                {
+                    equilibriumDifference = difference;
+                }
             }
 
-            int equilibrium = differences[0];
-            for (int i = 1; i < differences.Length; i++)
-            {
-                if (equilibrium > differences[i])
-                    equilibrium = differences[i];
-            }
-
-            return equilibrium;
+            return equilibriumDifference;
         }
     }
 }
