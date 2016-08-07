@@ -28,6 +28,16 @@ namespace Codility.Lessons.Test
             AssertFindEquilibriumThrows(singleItemArray);
         }
 
+        [Test]
+        public void FindEquilibrium_WhenArrayContainsTwoElementsAndFirstBiggerThanSecond_ShouldReturnPossitiveDifference()
+        {
+            // Arrange
+            int[] array = new int[2] { 6, 2 };
+
+            // Act & Assert
+            AssertEquilibriumIs(array, 4);
+        }
+
         //[Test]
         //public void FindEquilibrium_WhenArrayContainsTwoElement_ShouldReturnDifferenceBetweenFirstAndLast()
         //{

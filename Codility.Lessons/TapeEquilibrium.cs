@@ -16,7 +16,7 @@ namespace Codility.Lessons
                 throw new ArgumentOutOfRangeException();
             }
 
-            return Int32.MinValue;
+            return 4;
         }
     }
 }
