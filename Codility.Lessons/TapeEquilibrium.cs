@@ -16,7 +16,7 @@ namespace Codility.Lessons
                 throw new ArgumentOutOfRangeException();
             }
 
-            return 4;
+            return Math.Abs(array[0] - array[1]);
         }
     }
 }
