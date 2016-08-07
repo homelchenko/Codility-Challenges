@@ -28,65 +28,55 @@ namespace Codility.Lessons.Test
             AssertFindEquilibriumThrows(singleItemArray);
         }
 
-        [Test]
-        public void FindEquilibrium_WhenArrayContainsTwoElementAndSecondDifferenceIsGreaterThanFirstOne_ShouldReturnOne()
-        {
-            // Arrange
-            int[] array = new int[2] { 1, -2 };
+        //[Test]
+        //public void FindEquilibrium_WhenArrayContainsTwoElement_ShouldReturnDifferenceBetweenFirstAndLast()
+        //{
+        //    // Arrange
+        //    int[] array = new int[2] { -1, 2 };
             
-            // Act & Assert
-            AssertEquilibriumIs(array, 1);
-        }
+        //    // Act & Assert
+        //    AssertEquilibriumIs(array, 3);
+        //}
 
-        [Test]
-        public void FindEquilibirium_WhenArrayContainsTwoElementAndSecondDifferenceIsSmallerThanFirstOne_ShouldReturnOne()
-        {
-            // Arrange
-            int[] array = new int[2] { -1, -2 };
+        //[Test]
+        //public void FindEquilibrium_WhenArrayContainsTwoElementsAndDifferenceIsNegative_ShouldReturnOppositeDifferenceBetweenFirstAndLast()
+        //{
+        //    // Arrange
+        //    int[] array = new int[2] { -1, 2 };
 
-            // Act & Assert
-            AssertEquilibriumIs(array, 1);
-        }
+        //    // Act & Assert
+        //    AssertEquilibriumIs(array, 3);
+        //}
 
-        [Test]
-        public void FindEquilibrium_WhenDifferencesAreNegativeAndSecondDifferenceIsGreaterThanFirstOne_ShouldReturnOne()
-        {
-            // Arrange
-            int[] array = new int[2] { 1, 2 };
+        //[Test]
+        //public void FindEquilibrium_WhenSeveralDiffernceAndTheyAreEqual_ShouldReturnDifference()
+        //{
+        //    // Arrange
+        //    int[] array = new int[3] { 2, 0, 2 };
 
-            // Act & Assert
-            AssertEquilibriumIs(array, 1);
-        }
+        //    // Act & Assert
+        //    AssertEquilibriumIs(array, 0);
+        //}
 
-        [Test]
-        public void FindEquilibrium_WhenDifferencesAreTheSame_ShouldReturnOne()
-        {
-            // Arrange
-            int[] array = new int[2] { 0, 1 };
+        //[Test]
+        //public void FindEquilibrium_WhenMaxLengthOfArrayAndMaxValues_ShouldReturnZero()
+        //{
+        //    // Arrange
+        //    int[] array = CreateMaxLengthArrayOfValues(1000);
 
-            // Act & Assert
-            AssertEquilibriumIs(array, 1);
-        }
+        //    // Act & Assert
+        //    AssertEquilibriumIs(array, 0);
+        //}
 
-        [Test]
-        public void FindEquilibrium_WhenMaxLengthOfArrayAndMaxValues_ShouldReturnZero()
-        {
-            // Arrange
-            int[] array = CreateMaxLengthArrayOfValues(1000);
+        //[Test]
+        //public void FindEquilibrium_WhenMaxLengthOfArrayAndMinValues_ShouldReturnZero()
+        //{
+        //    // Arrange
+        //    int[] array = CreateMaxLengthArrayOfValues(-1000);
 
-            // Act & Assert
-            AssertEquilibriumIs(array, 0);
-        }
-
-        [Test]
-        public void FindEquilibrium_WhenMaxLengthOfArrayAndMinValues_ShouldReturnZero()
-        {
-            // Arrange
-            int[] array = CreateMaxLengthArrayOfValues(-1000);
-
-            // Act & Assert
-            AssertEquilibriumIs(array, 0);
-        }
+        //    // Act & Assert
+        //    AssertEquilibriumIs(array, 0);
+        //}
 
         private static int[] CreateMaxLengthArrayOfValues(int value)
         {
