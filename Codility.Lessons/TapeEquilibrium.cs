@@ -16,7 +16,15 @@ namespace Codility.Lessons
                 throw new ArgumentOutOfRangeException();
             }
 
-            return Math.Abs(array[0] - array[1]);
+            int leftSum = array[0];
+            int rightSum = 0;
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                rightSum += array[i];
+            }
+
+            return Math.Abs(leftSum - rightSum);
         }
     }
 }

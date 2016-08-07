@@ -48,6 +48,16 @@ namespace Codility.Lessons.Test
             AssertEquilibriumIs(array, 4);
         }
 
+        [Test]
+        public void FindEquilibrium_WhenArrayContainsThreeAndFirstDifferenceIsSmallerThenSecond_ShouldReturnSecondDifference()
+        {
+            // Arrange
+            int[] array = new int[3] { 9, 3, 5 };
+
+            // Act & Assert
+            AssertEquilibriumIs(array, 1);
+        }
+
         //[Test]
         //public void FindEquilibrium_WhenArrayContainsTwoElement_ShouldReturnDifferenceBetweenFirstAndLast()
         //{
