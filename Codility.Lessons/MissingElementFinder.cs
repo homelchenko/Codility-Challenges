@@ -8,7 +8,7 @@ namespace Codility.Lessons
 
         public int FindMissingElement(int[] array)
         {
-            if (array.Length == 0 || array.Length > MaxArrayLength)
+            if (array.Length > MaxArrayLength)
             {
                 throw new ArgumentException();
             }

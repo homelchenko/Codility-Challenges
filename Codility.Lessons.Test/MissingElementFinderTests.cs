@@ -10,13 +10,17 @@ namespace Codility.Lessons.Test
     public class MissingElementFinderTests
     {
         [Test]
-        public void FindMissingElement_WhenArrayIsEmpty_ShouldThrow()
+        public void FindMissingElement_WhenArrayIsEmpty_ShouldReturnOne()
         {
             // Arrange
             int[] emptyArray = new int[0];
 
+            int expectedMissingValue = 1;
+
             // Act & Assert
-            AssertFindMissingElementThrowsArgumentException(emptyArray);
+            AssertMissingValueIs(
+                emptyArray,
+                expectedMissingValue);
         }
 
         [Test]
