@@ -33,6 +33,17 @@ namespace Codility.Lessons.Test
             AssertCalculateJumpsThrowsArgumentException(zeroOrigin, AnyDestination, AnyJumpLength);
         }
 
+        [Test]
+        public void CalculateJumps_WhenDestinationIsLessThanOne_ShouldThrow()
+        {
+            // Arrange
+            int zeroDestination = 0;
+            int anyOrigin = 1;
+
+            // Act & Assert
+            AssertCalculateJumpsThrowsArgumentException(anyOrigin, zeroDestination, AnyJumpLength);
+        }
+
         private static void AssertCalculateJumpsThrowsArgumentException(int origin, int destination, int anyJumpLength)
         {
             JumpCalculator jumpCalculator = CreateJumpCalculator();
