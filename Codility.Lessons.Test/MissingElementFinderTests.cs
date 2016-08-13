@@ -27,7 +27,7 @@ namespace Codility.Lessons.Test
         public void FindMissingElement_WhenArrayIsLongerThanMaxAllowed_ShouldThrow()
         {
             // Arrange
-            int[] tooLongArray = new int[100002];
+            int[] tooLongArray = new int[100001];
 
             // Act & Assert
             AssertFindMissingElementThrowsArgumentException(tooLongArray);
@@ -105,7 +105,7 @@ namespace Codility.Lessons.Test
 
         private static int[] CreateLongestPossibleArray(int seed)
         {
-            int[] maxPossibleSumArray = new int[100000];
+            int[] maxPossibleSumArray = new int[MissingElementFinder.MaxArrayLength];
             SeedArray(maxPossibleSumArray, seed);
             return maxPossibleSumArray;
         }

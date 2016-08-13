@@ -4,7 +4,7 @@ namespace Codility.Lessons
 {
     public class MissingElementFinder
     {
-        private const int MaxArrayLength = 100001;
+        public const int MaxArrayLength = 100000;
 
         public int FindMissingElement(int[] array)
         {
