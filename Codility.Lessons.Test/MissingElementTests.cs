@@ -15,10 +15,34 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] emptyArray = new int[0];
 
-            Action findMissingElement = () => new MissingElement().FindMissingElement(emptyArray);
+            // Act & Assert
+            AssertFindMissingElementThrowsArgumentException(emptyArray);
+        }
+
+        [Test]
+        public void FindMissingElement_WhenArrayIsLongerThanMaxAllowed_ShouldThrow()
+        {
+            // Arrange
+            int[] tooLongArray = new int[100002];
+
+            // Act & Assert
+            AssertFindMissingElementThrowsArgumentException(tooLongArray);
+        }
+
+        private static void AssertFindMissingElementThrowsArgumentException(int[] tooLongArray)
+        {
+            // Arrange
+            MissingElement missingElement = CreateMissingElement();
+
+            Action findMissingElement = () => missingElement.FindMissingElement(tooLongArray);
 
             // Act & Assert
             findMissingElement.ShouldThrow<ArgumentException>();
+        }
+
+        private static MissingElement CreateMissingElement()
+        {
+            return new MissingElement();
         }
     }
 }
