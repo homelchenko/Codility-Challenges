@@ -70,6 +70,23 @@ namespace Codility.Lessons.Test
             jumpNumber.Should().Be(0);
         }
 
+        [Test]
+        public void CalculateJumps_WhenDestinationIsInOneJump_ShouldReturnOne()
+        {
+            // Arrange
+            var jumpCalculator = new JumpCalculator();
+
+            int origin = 1;
+            int destination = 2;
+            int unitJumpLength = 1;
+
+            // Act
+            int jumpNumber = jumpCalculator.CalculateJumps(origin, destination, unitJumpLength);
+
+            // Assert
+            jumpNumber.Should().Be(1);
+        }
+
         private static void AssertCalculateJumpsThrowsArgumentException(int origin, int destination, int anyJumpLength)
         {
             JumpCalculator jumpCalculator = CreateJumpCalculator();
