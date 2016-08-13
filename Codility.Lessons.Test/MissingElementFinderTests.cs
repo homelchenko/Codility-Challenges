@@ -71,6 +71,26 @@ namespace Codility.Lessons.Test
                 expectedMissingValue);
         }
 
+        [Test]
+        public void FindMissingValue_WhenArrayIsLongest_ShouldReturnMissingValue()
+        {
+            // Arrange
+            int[] longestArray = new int[100000];
+
+            int seed = 0;
+            for (int i = 0; i < longestArray.Length; i++)
+            {
+                longestArray[i] = ++seed;
+            }
+
+            int expectedMissingValue = 100001;
+
+            // Act & Assert
+            AssertMissingValueIs(
+                longestArray,
+                expectedMissingValue);
+        }
+
         private static void AssertMissingValueIs(int[] oneItemArray, int expectedMissingValue)
         {
             // Arrange

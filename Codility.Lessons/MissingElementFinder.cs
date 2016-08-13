@@ -13,6 +13,9 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
+            // In checked context this will throw due to overflow,
+            // but it produces correct results as unit tests prove
+
             int maxPossibleArrayValue = array.Length + 1;
             int maxPossibleSum = (1 + maxPossibleArrayValue) * maxPossibleArrayValue / 2;
 
