@@ -16,7 +16,7 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            return destination - origin;
+            return (destination - origin) / jumpLength;
         }
     }
 }

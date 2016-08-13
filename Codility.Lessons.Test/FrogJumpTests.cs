@@ -87,6 +87,23 @@ namespace Codility.Lessons.Test
             jumpNumber.Should().Be(1);
         }
 
+        [Test]
+        public void CalculateJumps_WhenDestinationIsInWholeNumberOfJumps_ShouldReturnThatNumberOfJumps()
+        {
+            // Arrange
+            var jumpCalculator = new JumpCalculator();
+
+            int origin = 1;
+            int destination = 5;
+            int jumpLength = 2;
+
+            // Act
+            int jumpNumber = jumpCalculator.CalculateJumps(origin, destination, jumpLength);
+
+            // Assert
+            jumpNumber.Should().Be(2);
+        }
+
         private static void AssertCalculateJumpsThrowsArgumentException(int origin, int destination, int anyJumpLength)
         {
             JumpCalculator jumpCalculator = CreateJumpCalculator();
