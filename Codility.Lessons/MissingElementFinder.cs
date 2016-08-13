@@ -13,7 +13,16 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            return 3 - array[0];
+            int maxPossibleArrayValue = array.Length + 1;
+            int maxPossibleSum = (1 + maxPossibleArrayValue) * maxPossibleArrayValue / 2;
+
+            int actualSum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                actualSum += array[i];
+            }
+
+            return maxPossibleSum - actualSum;
         }
     }
 }

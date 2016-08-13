@@ -57,6 +57,20 @@ namespace Codility.Lessons.Test
                 expectedMissingValue);
         }
 
+        [Test]
+        public void FindMissingValue_WhenArrayContainsTwoElementsAndNoThree_ShouldReturnThree()
+        {
+            // Assert
+            int[] twoItemArray = new int[2] { 1, 2 };
+
+            int expectedMissingValue = 3;
+
+            // Act & Assert
+            AssertMissingValueIs(
+                twoItemArray,
+                expectedMissingValue);
+        }
+
         private static void AssertMissingValueIs(int[] oneItemArray, int expectedMissingValue)
         {
             // Arrange
