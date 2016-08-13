@@ -2,7 +2,7 @@
 
 namespace Codility.Lessons
 {
-    public class MissingElement
+    public class MissingElementFinder
     {
         private const int MaxArrayLength = 100001;
 
@@ -13,7 +13,7 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            return Int32.MinValue;
+            return 2;
         }
     }
 }

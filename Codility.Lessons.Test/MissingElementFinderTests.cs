@@ -7,7 +7,7 @@ using FluentAssertions;
 namespace Codility.Lessons.Test
 {
     [TestFixture]
-    public class MissingElementTests
+    public class MissingElementFinderTests
     {
         [Test]
         public void FindMissingElement_WhenArrayIsEmpty_ShouldThrow()
@@ -29,20 +29,35 @@ namespace Codility.Lessons.Test
             AssertFindMissingElementThrowsArgumentException(tooLongArray);
         }
 
+        [Test]
+        public void FindMissingElement_WhenArrayContainsSingleElementOne_ShouldReturnMissingElement()
+        {
+            // Arrange
+            var missingElementFinder = new MissingElementFinder();
+
+            int[] oneItemArray = new int[1] { 1 };
+
+            // Act
+            int missingElement = missingElementFinder.FindMissingElement(oneItemArray);
+
+            // Assert
+            missingElement.Should().Be(2);
+        }
+
         private static void AssertFindMissingElementThrowsArgumentException(int[] tooLongArray)
         {
             // Arrange
-            MissingElement missingElement = CreateMissingElement();
+            MissingElementFinder missingElementFinder = CreateMissingElement();
 
-            Action findMissingElement = () => missingElement.FindMissingElement(tooLongArray);
+            Action findMissingElement = () => missingElementFinder.FindMissingElement(tooLongArray);
 
             // Act & Assert
             findMissingElement.ShouldThrow<ArgumentException>();
         }
 
-        private static MissingElement CreateMissingElement()
+        private static MissingElementFinder CreateMissingElement()
         {
-            return new MissingElement();
+            return new MissingElementFinder();
         }
     }
 }
