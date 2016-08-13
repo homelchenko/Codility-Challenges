@@ -11,7 +11,7 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            if (origin < destination)
+            if (origin > destination)
             {
                 throw new ArgumentException();
             }

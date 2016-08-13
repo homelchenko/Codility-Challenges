@@ -14,11 +14,11 @@ namespace Codility.Lessons.Test
         private const int AnyOrigin = 1;
 
         [Test]
-        public void CalculateJumps_WhenOriginLessThanDestination_ShouldThrow()
+        public void CalculateJumps_WhenOriginMoreThanDestination_ShouldThrow()
         {
             // Arrange
-            int origin = 2;
-            int destination = 3;
+            int origin = 3;
+            int destination = 2;
 
             // Act & Assert
             AssertCalculateJumpsThrowsArgumentException(origin, destination, AnyJumpLength);
