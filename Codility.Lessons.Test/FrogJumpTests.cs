@@ -54,6 +54,22 @@ namespace Codility.Lessons.Test
             AssertCalculateJumpsThrowsArgumentException(AnyOrigin, AnyDestination, zeroJumpLength);
         }
 
+        [Test]
+        public void CalculateJumps_WhenOriginAndDestinationAreSame_ShouldReturnZero()
+        {
+            // Arrange
+            JumpCalculator jumpCalculator = CreateJumpCalculator();
+
+            int origin = 1;
+            int destination = 1;
+
+            // Act
+            int jumpNumber = jumpCalculator.CalculateJumps(origin, destination, AnyJumpLength);
+
+            // Arrange
+            jumpNumber.Should().Be(0);
+        }
+
         private static void AssertCalculateJumpsThrowsArgumentException(int origin, int destination, int anyJumpLength)
         {
             JumpCalculator jumpCalculator = CreateJumpCalculator();
