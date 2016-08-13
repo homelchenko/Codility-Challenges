@@ -9,9 +9,9 @@ namespace Codility.Lessons.Test
     [TestFixture]
     public class FrogJumpTests
     {
-        private const int AnyJumpLength = 1;
-        private const int AnyDestination = 1;
         private const int AnyOrigin = 1;
+        private const int AnyDestination = 1;
+        private const int AnyJumpLength = 1;
 
         [Test]
         public void CalculateJumps_WhenOriginMoreThanDestination_ShouldThrow()
@@ -58,50 +58,65 @@ namespace Codility.Lessons.Test
         public void CalculateJumps_WhenOriginAndDestinationAreSame_ShouldReturnZero()
         {
             // Arrange
-            JumpCalculator jumpCalculator = CreateJumpCalculator();
-
             int origin = 1;
             int destination = 1;
 
-            // Act
-            int jumpNumber = jumpCalculator.CalculateJumps(origin, destination, AnyJumpLength);
+            int expectedJumpNumber = 0;
 
-            // Arrange
-            jumpNumber.Should().Be(0);
+            // Arrange & Act & Assert
+            AssertJumpNumberIs(
+                origin,
+                destination,
+                AnyJumpLength,
+                expectedJumpNumber);
         }
 
         [Test]
         public void CalculateJumps_WhenDestinationIsInOneJump_ShouldReturnOne()
         {
             // Arrange
-            var jumpCalculator = new JumpCalculator();
-
             int origin = 1;
             int destination = 2;
             int unitJumpLength = 1;
 
-            // Act
-            int jumpNumber = jumpCalculator.CalculateJumps(origin, destination, unitJumpLength);
+            int expectedJumpNumber = 1;
 
-            // Assert
-            jumpNumber.Should().Be(1);
+            // Arrange & Act & Assert
+            AssertJumpNumberIs(
+                origin,
+                destination,
+                unitJumpLength,
+                expectedJumpNumber);
         }
 
         [Test]
         public void CalculateJumps_WhenDestinationIsInWholeNumberOfJumps_ShouldReturnThatNumberOfJumps()
         {
             // Arrange
-            var jumpCalculator = new JumpCalculator();
-
             int origin = 1;
             int destination = 5;
             int jumpLength = 2;
+
+            int expectedJumpNumber = 2;
+
+            // Arrange & Act & Assert
+            AssertJumpNumberIs(
+                origin,
+                destination,
+                jumpLength,
+                expectedJumpNumber);
+        }
+
+        private static void AssertJumpNumberIs(int origin, int destination, int jumpLength, int expectedJumpNumber)
+        {
+            // Arrange
+            var jumpCalculator = new JumpCalculator();
 
             // Act
             int jumpNumber = jumpCalculator.CalculateJumps(origin, destination, jumpLength);
 
             // Assert
-            jumpNumber.Should().Be(2);
+            jumpNumber.Should().Be(expectedJumpNumber);
         }
 
         private static void AssertCalculateJumpsThrowsArgumentException(int origin, int destination, int anyJumpLength)
