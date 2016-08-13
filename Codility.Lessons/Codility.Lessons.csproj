@@ -43,6 +43,7 @@
     <Compile Include="BinaryGap.cs" />
     <Compile Include="CyclicRotation.cs" />
     <Compile Include="JumpCalculator.cs" />
+    <Compile Include="MissingElement.cs" />
     <Compile Include="OddArrayOccurences.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TapeEquilibrium.cs" />
