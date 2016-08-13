@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BinaryGapTests.cs" />
     <Compile Include="CyclicRotationTests.cs" />
+    <Compile Include="FrogJumpTests.cs" />
     <Compile Include="OddArrayOccurencesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TapeEquilibriumTests.cs" />
