@@ -16,7 +16,14 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            return (destination - origin) / jumpLength;
+            int distance = destination - origin;
+
+            int jumpNumberBeforeDestination = distance / jumpLength;
+
+            if (distance % jumpLength > 0)
+                return jumpNumberBeforeDestination + 1;
+
+            return jumpNumberBeforeDestination;
         }
     }
 }

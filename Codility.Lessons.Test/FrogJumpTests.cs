@@ -107,6 +107,24 @@ namespace Codility.Lessons.Test
                 expectedJumpNumber);
         }
 
+        [Test]
+        public void CalculateJumps_WhenLastJumpIsBeyondDestination_ShouldReturnJumpNumberAccountingForLastOne()
+        {
+            // Arrange
+            int origin = 1;
+            int destination = 6;
+            int jumpLength = 2;
+
+            int expectedNumberOfJumps = 3;
+
+            // Arrange & Act & Arrange
+            AssertJumpNumberIs(
+                origin,
+                destination,
+                jumpLength,
+                expectedNumberOfJumps);
+        }
+
         private static void AssertJumpNumberIs(int origin, int destination, int jumpLength, int expectedJumpNumber)
         {
             // Arrange
