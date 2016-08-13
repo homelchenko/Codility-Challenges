@@ -75,13 +75,7 @@ namespace Codility.Lessons.Test
         public void FindMissingValue_WhenArrayIsLongest_ShouldReturnMissingValue()
         {
             // Arrange
-            int[] longestArray = new int[100000];
-
-            int seed = 0;
-            for (int i = 0; i < longestArray.Length; i++)
-            {
-                longestArray[i] = ++seed;
-            }
+            int[] longestArray = CreateLongestPossibleArray(1);
 
             int expectedMissingValue = 100001;
 
@@ -89,6 +83,27 @@ namespace Codility.Lessons.Test
             AssertMissingValueIs(
                 longestArray,
                 expectedMissingValue);
+        }
+
+        [Test]
+        public void FindMissingValue_WhenArrayContainsMaxPossibleSum_ShouldReturnOne()
+        {
+            // Arrange
+            int[] maxPossibleSumArray = CreateLongestPossibleArray(2);
+
+            int expectedMissingValue = 1;
+
+            // Act & Assert
+            AssertMissingValueIs(
+                maxPossibleSumArray,
+                expectedMissingValue);
+        }
+
+        private static int[] CreateLongestPossibleArray(int seed)
+        {
+            int[] maxPossibleSumArray = new int[100000];
+            SeedArray(maxPossibleSumArray, seed);
+            return maxPossibleSumArray;
         }
 
         private static void AssertMissingValueIs(int[] oneItemArray, int expectedMissingValue)
@@ -117,6 +132,16 @@ namespace Codility.Lessons.Test
         private static MissingElementFinder CreateMissingElement()
         {
             return new MissingElementFinder();
+        }
+
+
+        private static void SeedArray(int[] longestArray, int firstElementInSeries)
+        {
+            int seed = firstElementInSeries - 1;
+            for (int i = 0; i < longestArray.Length; i++)
+            {
+                longestArray[i] = ++seed;
+            }
         }
     }
 }
