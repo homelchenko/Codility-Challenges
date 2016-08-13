@@ -10,6 +10,7 @@ namespace Codility.Lessons.Test
     public class FrogJumpTests
     {
         private const int AnyJumpLength = 1;
+        private const int AnyDestination = 1;
 
         [Test]
         public void CalculateJumps_WhenOriginLessThanDestination_ShouldThrow()
@@ -18,10 +19,8 @@ namespace Codility.Lessons.Test
             int origin = 2;
             int destination = 3;
 
-            Action calculateJumps = () => new JumpCalculator().CalculateJumps(origin, destination, AnyJumpLength);
-
             // Act & Assert
-            calculateJumps.ShouldThrow<ArgumentException>();
+            AssertCalculateJumpsThrowsArgumentException(origin, destination, AnyJumpLength);
         }
 
         [Test]
@@ -29,12 +28,24 @@ namespace Codility.Lessons.Test
         {
             // Arrange
             int zeroOrigin = 0;
-            int anyDestination = 1;
 
-            Action calculateJumps = () => new JumpCalculator().CalculateJumps(zeroOrigin, anyDestination, AnyJumpLength);
+            // Act & Assert
+            AssertCalculateJumpsThrowsArgumentException(zeroOrigin, AnyDestination, AnyJumpLength);
+        }
+
+        private static void AssertCalculateJumpsThrowsArgumentException(int origin, int destination, int anyJumpLength)
+        {
+            JumpCalculator jumpCalculator = CreateJumpCalculator();
+
+            Action calculateJumps = () => jumpCalculator.CalculateJumps(origin, destination, anyJumpLength);
 
             // Act & Assert
             calculateJumps.ShouldThrow<ArgumentException>();
+        }
+
+        private static JumpCalculator CreateJumpCalculator()
+        {
+            return new JumpCalculator();
         }
     }
 }
