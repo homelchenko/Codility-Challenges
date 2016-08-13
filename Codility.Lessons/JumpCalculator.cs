@@ -6,7 +6,7 @@ namespace Codility.Lessons
     {
         public int CalculateJumps(int origin, int destination, int jumpLength)
         {
-            if ((origin < 1) || (destination < 1))
+            if ((origin < 1) || (destination < 1) || (jumpLength < 1))
             {
                 throw new ArgumentException();
             }

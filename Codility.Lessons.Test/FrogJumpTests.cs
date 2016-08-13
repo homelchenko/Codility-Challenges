@@ -11,6 +11,7 @@ namespace Codility.Lessons.Test
     {
         private const int AnyJumpLength = 1;
         private const int AnyDestination = 1;
+        private const int AnyOrigin = 1;
 
         [Test]
         public void CalculateJumps_WhenOriginLessThanDestination_ShouldThrow()
@@ -38,10 +39,19 @@ namespace Codility.Lessons.Test
         {
             // Arrange
             int zeroDestination = 0;
-            int anyOrigin = 1;
 
             // Act & Assert
-            AssertCalculateJumpsThrowsArgumentException(anyOrigin, zeroDestination, AnyJumpLength);
+            AssertCalculateJumpsThrowsArgumentException(AnyOrigin, zeroDestination, AnyJumpLength);
+        }
+
+        [Test]
+        public void CalculateJumps_WhenJumpLengthIsLessThanOne_ShouldThrow()
+        {
+            // Arrange
+            int zeroJumpLength = 0;
+
+            // Act & Arrange
+            AssertCalculateJumpsThrowsArgumentException(AnyOrigin, AnyDestination, zeroJumpLength);
         }
 
         private static void AssertCalculateJumpsThrowsArgumentException(int origin, int destination, int anyJumpLength)
