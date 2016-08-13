@@ -33,15 +33,40 @@ namespace Codility.Lessons.Test
         public void FindMissingElement_WhenArrayContainsSingleElementOne_ShouldReturnMissingElement()
         {
             // Arrange
-            var missingElementFinder = new MissingElementFinder();
-
             int[] oneItemArray = new int[1] { 1 };
+
+            int expectedMissingValue = 2;
+
+            // Act & Assert
+            AssertMissingValueIs(
+                oneItemArray,
+                expectedMissingValue);
+        }
+
+        [Test]
+        public void FindMissingElement_WhenArrayContainsSingleElementTwo_ShouldReturnOne()
+        {
+            // Arrange
+            int[] oneItemArray = new int[1] { 2 };
+
+            int expectedMissingValue = 1;
+
+            // Act & Assert
+            AssertMissingValueIs(
+                oneItemArray,
+                expectedMissingValue);
+        }
+
+        private static void AssertMissingValueIs(int[] oneItemArray, int expectedMissingValue)
+        {
+            // Arrange
+            var missingElementFinder = new MissingElementFinder();
 
             // Act
             int missingElement = missingElementFinder.FindMissingElement(oneItemArray);
 
             // Assert
-            missingElement.Should().Be(2);
+            missingElement.Should().Be(expectedMissingValue);
         }
 
         private static void AssertFindMissingElementThrowsArgumentException(int[] tooLongArray)
