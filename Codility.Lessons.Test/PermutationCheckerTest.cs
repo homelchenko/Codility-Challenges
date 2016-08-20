@@ -75,7 +75,9 @@ namespace Codility.Lessons.Test
         public void IsPermutation_WhenArrayContainsElementLessThanOneShouldThrow()
         {
             // Arrange
-            int[] array = new int[2] { 1, 0 };
+            int valueBelowMin = 0;
+
+            int[] array = new int[2] { 1, valueBelowMin };
 
             // Act & Assert
             AssertIsPermutationThrowsArgumentException(array);
