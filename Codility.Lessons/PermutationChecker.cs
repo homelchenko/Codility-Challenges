@@ -13,15 +13,38 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            int permutationSum = (1 + array.Length) * array.Length / 2;
+            bool[] flags = new bool[array.Length + 1];
 
-            int arraySum = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                arraySum += array[i];
+                int candidateValue = array[i];
+
+                if (candidateValue > array.Length)
+                {
+                    // Value falls beyond permutation limits
+                    return false;
+                }
+
+                bool currentFlag = flags[candidateValue];
+                if (currentFlag)
+                {
+                    // Value is found more than once
+                    return false;
+                }
+
+                flags[candidateValue] = true;
             }
 
-            return arraySum == permutationSum;
+            for (int i = 1; i < flags.Length; i++)
+            {
+                if (!flags[i])
+                {
+                    // Value to be full permutation is missing
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }
