@@ -95,6 +95,18 @@ namespace Codility.Lessons.Test
             AssertIsPermutationThrowsArgumentException(array);
         }
 
+        [Test]
+        public void IsPermutation_WhenArrayContainsMaxLengthAndConsequtiveNumbers_ShouldReturnTrue()
+        {
+            // Arrange
+            int seed = 1;
+
+            int[] arrayOfMaxLength = CreateMaxLengthArray(seed);
+
+            // Act & Assert
+            AssertIsPermutation(arrayOfMaxLength);
+        }
+
         private static void AssertIsPermutation(int[] array)
         {
             // Arrange
@@ -132,6 +144,18 @@ namespace Codility.Lessons.Test
         private static PermutationChecker CreatePermutationChecker()
         {
             return new PermutationChecker();
+        }
+
+        private static int[] CreateMaxLengthArray(int firstValue)
+        {
+            int[] arrayOfMaxLength = new int[PermutationChecker.MaxArrayLength];
+
+            int seed = firstValue - 1;
+            for (int i = 0; i < arrayOfMaxLength.Length; i++)
+            {
+                arrayOfMaxLength[i] = ++seed;
+            }
+            return arrayOfMaxLength;
         }
     }
 }
