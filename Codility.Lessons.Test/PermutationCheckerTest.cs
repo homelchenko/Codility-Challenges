@@ -101,10 +101,34 @@ namespace Codility.Lessons.Test
             // Arrange
             int seed = 1;
 
-            int[] arrayOfMaxLength = CreateMaxLengthArray(seed);
+            int[] arrayOfMaxLength = CreateMaxLengthArrayWithSeed(seed);
 
             // Act & Assert
             AssertIsPermutation(arrayOfMaxLength);
+        }
+
+        [Test]
+        public void IsPermutation_WhenArrayContainsMaxLengthAndMaxValues_ShouldReturnFalse()
+        {
+            // Arrange
+            int maxValue = PermutationChecker.MaxValue;
+
+            var maxValueArray = CreateMaxLengthArrayWithValue(maxValue);
+
+            // Act & Assert
+            AssertIsNotPermutation(maxValueArray);
+        }
+
+        private static int[] CreateMaxLengthArrayWithValue(int value)
+        {
+            int[] maxValueArray = new int[PermutationChecker.MaxArrayLength];
+
+            for (int i = 0; i < maxValueArray.Length; i++)
+            {
+                maxValueArray[i] = value;
+            }
+
+            return maxValueArray;
         }
 
         private static void AssertIsPermutation(int[] array)
@@ -146,7 +170,7 @@ namespace Codility.Lessons.Test
             return new PermutationChecker();
         }
 
-        private static int[] CreateMaxLengthArray(int firstValue)
+        private static int[] CreateMaxLengthArrayWithSeed(int firstValue)
         {
             int[] arrayOfMaxLength = new int[PermutationChecker.MaxArrayLength];
 
