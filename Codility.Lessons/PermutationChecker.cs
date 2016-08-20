@@ -5,6 +5,7 @@ namespace Codility.Lessons
     public class PermutationChecker
     {
         private const int MaxArrayLength = 100000;
+        private const int MinValue = 1;
 
         public bool IsPermutation(int[] array)
         {
@@ -18,6 +19,8 @@ namespace Codility.Lessons
             for (int i = 0; i < array.Length; i++)
             {
                 int candidateValue = array[i];
+
+                ValidateValue(candidateValue);
 
                 if (candidateValue > array.Length)
                 {
@@ -45,6 +48,14 @@ namespace Codility.Lessons
             }
 
             return true;
+        }
+
+        private static void ValidateValue(int value)
+        {
+            if (value < MinValue)
+            {
+                throw new ArgumentException();
+            }
         }
     }
 }

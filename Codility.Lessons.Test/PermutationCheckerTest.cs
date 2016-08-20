@@ -71,6 +71,16 @@ namespace Codility.Lessons.Test
             AssertIsNotPermutation(twoItemArray);
         }
 
+        [Test]
+        public void IsPermutation_WhenArrayContainsElementLessThanOneShouldThrow()
+        {
+            // Arrange
+            int[] array = new int[2] { 1, 0 };
+
+            // Act & Assert
+            AssertIsPermutationThrowsArgumentException(array);
+        }
+
         private static void AssertIsPermutation(int[] array)
         {
             // Arrange
