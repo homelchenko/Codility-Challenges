@@ -52,7 +52,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void IsPermutation_WhenArrayContainsTwoDistinctItemsOneAndTwo_ShouldReturnFalse()
+        public void IsPermutation_WhenArrayContainsTwoDistinctItemsOneAndTwo_ShouldReturnTrue()
         {
             // Arrange
             int[] twoItemArray = new int[2] { 2, 1 };
