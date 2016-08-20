@@ -14,7 +14,26 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] emptyArray = new int[0];
 
-            Action isPermutation = () => new PermutationChecker().IsPermutation(emptyArray);
+            // Act & Assert
+            AssertIsPermutationThrowsArgumentException(emptyArray);
+        }
+
+        [Test]
+        public void IsPermutation_WhenArrayIsLongerThanMaxLength_ShouldThrow()
+        {
+            // Arrange
+            var lengthLongerThanMax = 100001;
+
+            int[] arrayLongerThanMax = new int[lengthLongerThanMax];
+
+            // Act & Assert
+            AssertIsPermutationThrowsArgumentException(arrayLongerThanMax);
+        }
+
+        private static void AssertIsPermutationThrowsArgumentException(int[] array)
+        {
+            // Arrange
+            Action isPermutation = () => new PermutationChecker().IsPermutation(array);
 
             // Act & Assert
             isPermutation.ShouldThrow<ArgumentException>();
