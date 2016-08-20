@@ -45,6 +45,7 @@
     <Compile Include="JumpCalculator.cs" />
     <Compile Include="MissingElementFinder.cs" />
     <Compile Include="OddArrayOccurences.cs" />
+    <Compile Include="PermutationChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TapeEquilibrium.cs" />
   </ItemGroup>
