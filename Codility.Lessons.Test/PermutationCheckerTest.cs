@@ -41,6 +41,16 @@ namespace Codility.Lessons.Test
             AssertIsPermutation(oneItemArray);
         }
 
+        [Test]
+        public void IsPermutation_WhenArrayContainsSingleItemAndIsNotOne_ShouldReturnFalse()
+        {
+            // Arrange
+            int[] oneItemArray = new int[1] { 2 };
+
+            // Act & Assert
+            AssertIsNotPermutation(oneItemArray);
+        }
+
         private static void AssertIsPermutation(int[] array)
         {
             // Arrange
@@ -51,6 +61,17 @@ namespace Codility.Lessons.Test
 
             // Assert
             isPermutation.Should().BeTrue();
+        }
+
+        private static void AssertIsNotPermutation(int[] array)
+        {
+            var permutationChecker = CreatePermutationChecker();
+
+            // Act
+            bool isPermutation = permutationChecker.IsPermutation(array);
+
+            // Assert
+            isPermutation.Should().BeFalse();
         }
 
         private static void AssertIsPermutationThrowsArgumentException(int[] array)
