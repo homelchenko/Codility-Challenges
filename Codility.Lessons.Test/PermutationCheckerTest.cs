@@ -1,4 +1,5 @@
 ﻿using System;
+
 using NUnit.Framework;
 
 using FluentAssertions;
@@ -30,13 +31,42 @@ namespace Codility.Lessons.Test
             AssertIsPermutationThrowsArgumentException(arrayLongerThanMax);
         }
 
+        [Test]
+        public void IsPermutation_WhenArrayContainsSingleItemAndIsOne_ShouldReturnTrue()
+        {
+            // Arrange
+            int[] oneItemArray = new int[1] { 1 };
+
+            // Act & Assert
+            AssertIsPermutation(oneItemArray);
+        }
+
+        private static void AssertIsPermutation(int[] array)
+        {
+            // Arrange
+            PermutationChecker permutationChecker = CreatePermutationChecker();
+
+            // Act
+            bool isPermutation = permutationChecker.IsPermutation(array);
+
+            // Assert
+            isPermutation.Should().BeTrue();
+        }
+
         private static void AssertIsPermutationThrowsArgumentException(int[] array)
         {
             // Arrange
-            Action isPermutation = () => new PermutationChecker().IsPermutation(array);
+            PermutationChecker permutationChecker = CreatePermutationChecker();
+
+            Action isPermutation = () => permutationChecker.IsPermutation(array);
 
             // Act & Assert
             isPermutation.ShouldThrow<ArgumentException>();
+        }
+
+        private static PermutationChecker CreatePermutationChecker()
+        {
+            return new PermutationChecker();
         }
     }
 }
