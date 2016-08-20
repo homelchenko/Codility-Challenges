@@ -6,6 +6,7 @@ namespace Codility.Lessons
     {
         private const int MaxArrayLength = 100000;
         private const int MinValue = 1;
+        private const int MaxValue = 1000000000;
 
         public bool IsPermutation(int[] array)
         {
@@ -52,7 +53,7 @@ namespace Codility.Lessons
 
         private static void ValidateValue(int value)
         {
-            if (value < MinValue)
+            if (value < MinValue || value > MaxValue)
             {
                 throw new ArgumentException();
             }

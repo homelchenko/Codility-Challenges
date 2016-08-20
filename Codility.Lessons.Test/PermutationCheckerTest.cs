@@ -81,6 +81,18 @@ namespace Codility.Lessons.Test
             AssertIsPermutationThrowsArgumentException(array);
         }
 
+        [Test]
+        public void IsPermutation_WhenArrayContainsElementMoreThanMax_ShouldThrow()
+        {
+            // Arrange
+            int valueBeyondMax = 1000000001;
+
+            int[] array = new int[2] { 1, valueBeyondMax };
+
+            // Act & Assert
+            AssertIsPermutationThrowsArgumentException(array);
+        }
+
         private static void AssertIsPermutation(int[] array)
         {
             // Arrange
