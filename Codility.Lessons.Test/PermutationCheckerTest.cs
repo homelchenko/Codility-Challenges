@@ -61,6 +61,16 @@ namespace Codility.Lessons.Test
             AssertIsPermutation(twoItemArray);
         }
 
+        [Test]
+        public void IsPermutation_WhenArrayContainsTwoItemsTwoAndThree_ShouldReturnFalse()
+        {
+            // Arrange
+            int[] twoItemArray = new int[2] { 2, 3 };
+
+            // Act & Assert
+            AssertIsNotPermutation(twoItemArray);
+        }
+
         private static void AssertIsPermutation(int[] array)
         {
             // Arrange
