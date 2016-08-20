@@ -13,7 +13,15 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            return array[0] == 1;
+            int permutationSum = (1 + array.Length) * array.Length / 2;
+
+            int arraySum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                arraySum += array[i];
+            }
+
+            return arraySum == permutationSum;
         }
     }
 }
