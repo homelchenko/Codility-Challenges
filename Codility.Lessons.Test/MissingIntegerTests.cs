@@ -65,6 +65,18 @@ namespace Codility.Lessons.Test
             AssertFindMissingNumberReturns(twoItemArray, expected);
         }
 
+        [Test]
+        public void FindMissingNumber_WhenArrayContainsTwoItemsAndBothOnes_ShouldReturnTwo()
+        {
+            // Arrange
+            int[] twoItemArray = new int[2] { 1, 1 };
+
+            int expected = 2;
+
+            // Act & Assert
+            AssertFindMissingNumberReturns(twoItemArray, expected);
+        }
+
         private static void AssertFindMissingIntegerThrowsArgumentException(int[] array)
         {
             // Arrange

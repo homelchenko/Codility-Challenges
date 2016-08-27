@@ -13,12 +13,23 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            if (array.Length == 1)
+            int[] counts = new int[array.Length + 2];
+
+            for(int i = 0; i < array.Length; i++)
             {
-                return array[0] == 1 ? 2 : 1;
+                counts[array[i]]++;
             }
-            
-            return array.Length + 1;
+
+            for (int i = 1; i < counts.Length; i++)
+            {
+                if (counts[i] == 0)
+                {
+                    return i;
+                }
+            }
+
+            // We must not ever reach this point
+            throw new Exception();
         }
     }
 }
