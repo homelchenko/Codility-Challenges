@@ -20,7 +20,7 @@ namespace Codility.Lessons
             for(int i = 0; i < array.Length; i++)
             {
                 int itemValue = array[i];
-                if (itemValue < 0 || itemValue > maxPossibleValue)
+                if (itemValue <= 0 || itemValue > maxPossibleValue)
                 {
                     continue;
                 }
