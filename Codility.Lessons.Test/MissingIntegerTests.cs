@@ -35,10 +35,10 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] oneItemArray = new int[1] { 2 };
 
-            int expected = 1;
-
             // Act & Assert
-            AssertFindMissingNumberReturns(oneItemArray, expected);
+            AssertFindMissingNumberReturns(
+                oneItemArray,
+                expected: 1);
         }
 
         [Test]
@@ -47,10 +47,10 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] oneItemArray = new int[1] { 1 };
 
-            var expected = 2;
-
             // Assert
-            AssertFindMissingNumberReturns(oneItemArray, expected);
+            AssertFindMissingNumberReturns(
+                oneItemArray,
+                expected: 2);
         }
 
         [Test]
@@ -59,10 +59,10 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] twoItemArray = new int[2] { 1, 2 };
 
-            int expected = 3;
-
             // Act & Assert
-            AssertFindMissingNumberReturns(twoItemArray, expected);
+            AssertFindMissingNumberReturns(
+                twoItemArray,
+                expected: 3);
         }
 
         [Test]
@@ -71,10 +71,10 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] twoItemArray = new int[2] { 1, 1 };
 
-            int expected = 2;
-
             // Act & Assert
-            AssertFindMissingNumberReturns(twoItemArray, expected);
+            AssertFindMissingNumberReturns(
+                twoItemArray,
+                expected: 2);
         }
 
         [Test]
@@ -83,10 +83,10 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] array = new int[2] { 1, 4 };
 
-            int expected = 2;
-
             // Act & Assert
-            AssertFindMissingNumberReturns(array, expected);
+            AssertFindMissingNumberReturns(
+                array,
+                expected: 2);
         }
 
         [Test]
@@ -96,7 +96,9 @@ namespace Codility.Lessons.Test
             int[] arrayContainingNegative = new int[2] { 1, -1 };
 
             // Act & Assert
-            AssertFindMissingNumberReturns(arrayContainingNegative, 2);
+            AssertFindMissingNumberReturns(
+                arrayContainingNegative,
+                expected: 2);
         }
 
         [Test]
@@ -106,7 +108,9 @@ namespace Codility.Lessons.Test
             int[] arrayContainingZero = new int[2] { 1, 0 };
 
             // Act & Assert
-            AssertFindMissingNumberReturns(arrayContainingZero, 2);
+            AssertFindMissingNumberReturns(
+                arrayContainingZero,
+                expected: 2);
         }
 
         [Test]
@@ -116,7 +120,9 @@ namespace Codility.Lessons.Test
             int[] longestArray = new int[MissingInteger.MaxArrayLength];
 
             // Act & Assert
-            AssertFindMissingNumberReturns(longestArray, 1);
+            AssertFindMissingNumberReturns(
+                longestArray,
+                expected: 1);
         }
 
         [Test]
@@ -130,7 +136,9 @@ namespace Codility.Lessons.Test
             longestArrayOfMinValues.SeedWith(minValue);
 
             // Act & Assert
-            AssertFindMissingNumberReturns(longestArrayOfMinValues, 1);
+            AssertFindMissingNumberReturns(
+                longestArrayOfMinValues,
+                expected: 1);
         }
 
         [Test]
@@ -144,7 +152,9 @@ namespace Codility.Lessons.Test
             longestArrayOfMaxValues.SeedWith(maxValue);
 
             // Act & Assert
-            AssertFindMissingNumberReturns(longestArrayOfMaxValues, 1);
+            AssertFindMissingNumberReturns(
+                longestArrayOfMaxValues,
+                expected: 1);
         }
 
         private static void AssertFindMissingNumberThrowsArgumentException(int[] array)
