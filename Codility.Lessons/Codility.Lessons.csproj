@@ -44,6 +44,7 @@
     <Compile Include="CyclicRotation.cs" />
     <Compile Include="JumpCalculator.cs" />
     <Compile Include="MissingElementFinder.cs" />
+    <Compile Include="MissingInteger.cs" />
     <Compile Include="OddArrayOccurences.cs" />
     <Compile Include="PermutationChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

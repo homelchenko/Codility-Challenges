@@ -56,6 +56,7 @@
     <Compile Include="CyclicRotationTests.cs" />
     <Compile Include="FrogJumpTests.cs" />
     <Compile Include="MissingElementFinderTests.cs" />
+    <Compile Include="MissingIntegerTests.cs" />
     <Compile Include="OddArrayOccurencesTests.cs" />
     <Compile Include="PermutationCheckerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
