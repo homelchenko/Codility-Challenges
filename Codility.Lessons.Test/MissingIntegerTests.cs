@@ -89,6 +89,16 @@ namespace Codility.Lessons.Test
             AssertFindMissingNumberReturns(array, expected);
         }
 
+        [Test]
+        public void FindMissingNumber_WhenArrayContainsNegativeValue_ShouldReturnMissingInteger()
+        {
+            // Assert
+            int[] arrayContainingNegative = new int[2] { 1, -1 };
+
+            // Act & Assert
+            AssertFindMissingNumberReturns(arrayContainingNegative, 2);
+        }
+
         private static void AssertFindMissingNumberThrowsArgumentException(int[] array)
         {
             // Arrange

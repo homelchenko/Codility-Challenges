@@ -15,26 +15,24 @@ namespace Codility.Lessons
 
             int maxPossibleValue = array.Length + 1;
 
-            // We got +1 here because zero ('0') is not acceptable value
-            int[] counts = new int[maxPossibleValue + 1];
+            int[] counts = new int[maxPossibleValue];
 
             for(int i = 0; i < array.Length; i++)
             {
                 int itemValue = array[i];
-
-                if (itemValue > maxPossibleValue)
+                if (itemValue < 0 || itemValue > maxPossibleValue)
                 {
                     continue;
                 }
 
-                counts[itemValue]++;
+                counts[itemValue - 1]++;
             }
 
-            for (int i = 1; i < counts.Length; i++)
+            for (int i = 0; i < counts.Length; i++)
             {
                 if (counts[i] == 0)
                 {
-                    return i;
+                    return i + 1;
                 }
             }
 
