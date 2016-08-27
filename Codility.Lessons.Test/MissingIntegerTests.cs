@@ -16,7 +16,7 @@ namespace Codility.Lessons.Test
             int[] emptyArray = new int[0];
 
             // Act & Assert
-            AssertFindMissingIntegerThrowsArgumentException(emptyArray);
+            AssertFindMissingNumberThrowsArgumentException(emptyArray);
         }
 
         [Test]
@@ -26,7 +26,7 @@ namespace Codility.Lessons.Test
             int[] tooLongArray = new int[100001];
 
             // Act & Assert
-            AssertFindMissingIntegerThrowsArgumentException(tooLongArray);
+            AssertFindMissingNumberThrowsArgumentException(tooLongArray);
         }
 
         [Test]
@@ -77,7 +77,19 @@ namespace Codility.Lessons.Test
             AssertFindMissingNumberReturns(twoItemArray, expected);
         }
 
-        private static void AssertFindMissingIntegerThrowsArgumentException(int[] array)
+        [Test]
+        public void FindMissingNumber_WhenArrayContainsTwoItemsAndOneIsBiggerThanLength_ShouldReturnMissinInteger()
+        {
+            // Arrange
+            int[] array = new int[2] { 1, 4 };
+
+            int expected = 2;
+
+            // Act & Assert
+            AssertFindMissingNumberReturns(array, expected);
+        }
+
+        private static void AssertFindMissingNumberThrowsArgumentException(int[] array)
         {
             // Arrange
             MissingInteger missingInteger = CreateMissingInteger();
