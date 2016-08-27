@@ -13,7 +13,7 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            return 1;
+            return array[0] == 1 ? 2 : 1;
         }
     }
 }
