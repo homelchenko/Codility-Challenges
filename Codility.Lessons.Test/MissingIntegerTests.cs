@@ -133,6 +133,20 @@ namespace Codility.Lessons.Test
             AssertFindMissingNumberReturns(longestArrayOfMinValues, 1);
         }
 
+        [Test]
+        public void FindMissingNumber_WhenArrayContainsMaxNumberOfMaxValues_ShouldReturnMissingInteger()
+        {
+            // Arrange
+            int[] longestArrayOfMaxValues = new int[MissingInteger.MaxArrayLength];
+
+            int maxValue = Int32.MaxValue;
+
+            longestArrayOfMaxValues.SeedWith(maxValue);
+
+            // Act & Assert
+            AssertFindMissingNumberReturns(longestArrayOfMaxValues, 1);
+        }
+
         private static void AssertFindMissingNumberThrowsArgumentException(int[] array)
         {
             // Arrange
