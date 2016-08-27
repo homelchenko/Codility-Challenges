@@ -15,23 +15,49 @@ namespace Codility.Lessons.Test
             // Arrange
             int[] emptyArray = new int[0];
 
-            Action findMissingNumber = () => new MissingInteger().FindMissingNumber(emptyArray);
+            // Act & Assert
+            AssertFindMissingIntegerThrowsArgumentException(emptyArray);
+        }
+
+        [Test]
+        public void FindMissingNumber_WhenArrayIsTooLong_ShouldThrow()
+        {
+            // Arrange
+            int[] tooLongArray = new int[100001];
 
             // Act & Assert
-            findMissingNumber.ShouldThrow<ArgumentException>();
+            AssertFindMissingIntegerThrowsArgumentException(tooLongArray);
         }
 
         [Test]
         public void FindMissingNumber_WhenArrayContainsOneValueThatIsNotOne_ShouldReturnOne()
         {
             // Arrange
-            int[] oneItemArray = new int[1] { 2 };   
+            MissingInteger missingInteger = CreateMissingInteger();
+
+            int[] oneItemArray = new int[1] { 2 };
 
             // Act
-            int missingPossitiveInteger = new MissingInteger().FindMissingNumber(oneItemArray);
+            int missingPossitiveInteger = missingInteger.FindMissingNumber(oneItemArray);
 
             // Assert
             missingPossitiveInteger.Should().Be(1);
+        }
+
+        private static void AssertFindMissingIntegerThrowsArgumentException(int[] array)
+        {
+            // Arrange
+            MissingInteger missingInteger = CreateMissingInteger();
+
+            Action findMissingNumber = () => missingInteger.FindMissingNumber(array);
+
+            // Act & Assert
+            findMissingNumber.ShouldThrow<ArgumentException>();
+        }
+
+        private static MissingInteger CreateMissingInteger()
+        {
+            return new MissingInteger();
         }
     }
 }
