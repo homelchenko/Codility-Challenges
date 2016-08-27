@@ -4,9 +4,14 @@ namespace Codility.Lessons
 {
     public class MissingInteger
     {
-        public void FindMissingNumber(int[] array)
+        public int FindMissingNumber(int[] array)
         {
-            throw new ArgumentException();
+            if (array.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
+            return 1;
         }
     }
 }

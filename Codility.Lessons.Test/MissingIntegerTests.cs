@@ -20,5 +20,18 @@ namespace Codility.Lessons.Test
             // Act & Assert
             findMissingNumber.ShouldThrow<ArgumentException>();
         }
+
+        [Test]
+        public void FindMissingNumber_WhenArrayContainsOneValueThatIsNotOne_ShouldReturnOne()
+        {
+            // Arrange
+            int[] oneItemArray = new int[1] { 2 };   
+
+            // Act
+            int missingPossitiveInteger = new MissingInteger().FindMissingNumber(oneItemArray);
+
+            // Assert
+            missingPossitiveInteger.Should().Be(1);
+        }
     }
 }
