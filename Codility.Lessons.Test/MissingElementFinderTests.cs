@@ -106,7 +106,9 @@ namespace Codility.Lessons.Test
         private static int[] CreateLongestPossibleArray(int seed)
         {
             int[] maxPossibleSumArray = new int[MissingElementFinder.MaxArrayLength];
-            SeedArray(maxPossibleSumArray, seed);
+
+            maxPossibleSumArray.SeedWithSeries(seed);
+
             return maxPossibleSumArray;
         }
 
@@ -136,16 +138,6 @@ namespace Codility.Lessons.Test
         private static MissingElementFinder CreateMissingElement()
         {
             return new MissingElementFinder();
-        }
-
-
-        private static void SeedArray(int[] longestArray, int firstElementInSeries)
-        {
-            int seed = firstElementInSeries - 1;
-            for (int i = 0; i < longestArray.Length; i++)
-            {
-                longestArray[i] = ++seed;
-            }
         }
     }
 }

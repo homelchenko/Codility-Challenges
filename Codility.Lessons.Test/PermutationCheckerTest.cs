@@ -174,11 +174,8 @@ namespace Codility.Lessons.Test
         {
             int[] arrayOfMaxLength = new int[PermutationChecker.MaxArrayLength];
 
-            int seed = firstValue - 1;
-            for (int i = 0; i < arrayOfMaxLength.Length; i++)
-            {
-                arrayOfMaxLength[i] = ++seed;
-            }
+            arrayOfMaxLength.SeedWithSeries(firstValue);
+
             return arrayOfMaxLength;
         }
     }

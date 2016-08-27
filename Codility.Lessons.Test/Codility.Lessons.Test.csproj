@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayUtilities.cs" />
     <Compile Include="BinaryGapTests.cs" />
     <Compile Include="CyclicRotationTests.cs" />
     <Compile Include="FrogJumpTests.cs" />
