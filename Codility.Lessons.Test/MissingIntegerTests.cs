@@ -109,6 +109,16 @@ namespace Codility.Lessons.Test
             AssertFindMissingNumberReturns(arrayContainingZero, 2);
         }
 
+        [Test]
+        public void FindMissingNumber_WhenArrayContainsMaxPossibleLength_ShouldReturnMissingInteger()
+        {
+            // Arrange
+            int[] longestArray = new int[MissingInteger.MaxArrayLength];
+
+            // Act & Assert
+            AssertFindMissingNumberReturns(longestArray, 1);
+        }
+
         private static void AssertFindMissingNumberThrowsArgumentException(int[] array)
         {
             // Arrange
