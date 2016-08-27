@@ -13,7 +13,12 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            return array[0] == 1 ? 2 : 1;
+            if (array.Length == 1)
+            {
+                return array[0] == 1 ? 2 : 1;
+            }
+            
+            return array.Length + 1;
         }
     }
 }

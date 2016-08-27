@@ -33,30 +33,36 @@ namespace Codility.Lessons.Test
         public void FindMissingNumber_WhenArrayContainsOneValueThatIsNotOne_ShouldReturnOne()
         {
             // Arrange
-            MissingInteger missingInteger = CreateMissingInteger();
-
             int[] oneItemArray = new int[1] { 2 };
 
-            // Act
-            int missingPossitiveInteger = missingInteger.FindMissingNumber(oneItemArray);
+            int expected = 1;
 
-            // Assert
-            missingPossitiveInteger.Should().Be(1);
+            // Act & Assert
+            AssertFindMissingNumberReturns(oneItemArray, expected);
         }
 
         [Test]
         public void FindMissingNumber_WhenArrayContainsOneValueThatIsOne_ShouldReturnTwo()
         {
             // Arrange
-            MissingInteger missingInteger = CreateMissingInteger();
-
             int[] oneItemArray = new int[1] { 1 };
 
-            // Act
-            int missingPositiveNumber = missingInteger.FindMissingNumber(oneItemArray);
+            var expected = 2;
 
             // Assert
-            missingPositiveNumber.Should().Be(2);
+            AssertFindMissingNumberReturns(oneItemArray, expected);
+        }
+
+        [Test]
+        public void FindMissingNumber_WhenArrayContainsTwoConsecutiveNumbers_ShouldReturnNext()
+        {
+            // Arrange
+            int[] twoItemArray = new int[2] { 1, 2 };
+
+            int expected = 3;
+
+            // Act & Assert
+            AssertFindMissingNumberReturns(twoItemArray, expected);
         }
 
         private static void AssertFindMissingIntegerThrowsArgumentException(int[] array)
@@ -68,6 +74,18 @@ namespace Codility.Lessons.Test
 
             // Act & Assert
             findMissingNumber.ShouldThrow<ArgumentException>();
+        }
+
+        private static void AssertFindMissingNumberReturns(int[] array, int expected)
+        {
+            // Arrange
+            MissingInteger missingInteger = CreateMissingInteger();
+
+            // Act
+            int missingPossitiveInteger = missingInteger.FindMissingNumber(array);
+
+            // Assert
+            missingPossitiveInteger.Should().Be(expected);
         }
 
         private static MissingInteger CreateMissingInteger()
