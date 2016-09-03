@@ -9,6 +9,7 @@ namespace Codility.Lessons.Test
     public class FrogRiverNavigatorTests
     {
         private const int Never = -1;
+        private const int MaxAllowedGapSize = 100000;
 
         [Test]
         public void CalculateTimeToOtherBank_WhenGapSizeIsOneAndLeafFallsInZeroTime_ShouldBeZero()
@@ -135,15 +136,28 @@ namespace Codility.Lessons.Test
         public void CalculateTimeToOtherBank_WhenGapSizeIsMaxAllowedAndScheduleIsShortest_ShouldBeNever()
         {
             // Arrange
-            int maxAllowedSizeGap = 100000;
-
             int[] oneItemSchedule = new int[1] { 1 };
             
             // Act & Assert
             AssertTimeToOtherBankIs(
-                maxAllowedSizeGap,
+                MaxAllowedGapSize,
                 oneItemSchedule,
                 expectedTime: Never);
+        }
+
+        [Test]
+        public void CalculateTimeToOtherBank_WhenBothGapAndScheduleSizesAreMaxAllowed_ShouldBeMaxValue()
+        {
+            // Arrange
+            int[] longestPossibleSchedule = new int[100000];
+
+            longestPossibleSchedule.SeedWithSeries(1);
+            
+            // Act & Assert
+            AssertTimeToOtherBankIs(
+                MaxAllowedGapSize,
+                longestPossibleSchedule,
+                expectedTime: 99999);
         }
 
         private static void AssertCalculateTimeToOtherBankThrowsArgumentException(int gapSize, int[] schedule)
