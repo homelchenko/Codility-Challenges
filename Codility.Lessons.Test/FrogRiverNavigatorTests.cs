@@ -131,6 +131,21 @@ namespace Codility.Lessons.Test
                 expectedTime: Never);
         }
 
+        [Test]
+        public void CalculateTimeToOtherBank_WhenGapSizeIsMaxAllowedAndScheduleIsShortest_ShouldBeNever()
+        {
+            // Arrange
+            int maxAllowedSizeGap = 100000;
+
+            int[] oneItemSchedule = new int[1] { 1 };
+            
+            // Act & Assert
+            AssertTimeToOtherBankIs(
+                maxAllowedSizeGap,
+                oneItemSchedule,
+                expectedTime: Never);
+        }
+
         private static void AssertCalculateTimeToOtherBankThrowsArgumentException(int gapSize, int[] schedule)
         {
             // Arrange
