@@ -148,7 +148,7 @@ namespace Codility.Lessons.Test
         public void CalculateTimeToOtherBank_WhenBothGapAndScheduleSizesAreMaxAllowed_ShouldBeMaxValue()
         {
             // Arrange
-            int[] longestPossibleSchedule = new int[100000];
+            int[] longestPossibleSchedule = new int[FrogRiverNavigator.MaxAllowedScheduleLength];
 
             longestPossibleSchedule.SeedWithSeries(1);
             
@@ -171,6 +171,21 @@ namespace Codility.Lessons.Test
             AssertCalculateTimeToOtherBankThrowsArgumentException(
                 longerThanAllowedGapSize,
                 schedule);
+        }
+
+        [Test]
+        public void CalculateTimeToOtherBank_WhenSchduleLengthIsMoreThanMaxAllowed_ShouldThrow()
+        {
+            // Arrange
+            int gapSize = 1;
+            int[] longerThanAllowedSchedule = new int[100001];
+
+            longerThanAllowedSchedule.SeedWith(1);
+
+            // Act & Assert
+            AssertCalculateTimeToOtherBankThrowsArgumentException(
+                gapSize,
+                longerThanAllowedSchedule);
         }
 
         private static void AssertCalculateTimeToOtherBankThrowsArgumentException(int gapSize, int[] schedule)

@@ -6,6 +6,8 @@ namespace Codility.Lessons
     {
         public const int MaxAllowedGapSize = 100000;
 
+        public const int MaxAllowedScheduleLength = 100000;
+
         public int CalculateTimeToOtherBank(int gapSize, int[] schedule)
         {
             if (gapSize <= 0 || gapSize > MaxAllowedGapSize)
@@ -13,7 +15,7 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            if (schedule.Length == 0)
+            if (schedule.Length == 0 || schedule.Length > MaxAllowedScheduleLength)
             {
                 throw new ArgumentException();
             }
