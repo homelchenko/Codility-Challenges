@@ -72,6 +72,21 @@ namespace Codility.Lessons.Test
             AssertCalculateTimeToOtherBankThrowsArgumentException(emptyGapSize, schedule);
         }
 
+        [Test]
+        public void CalculateTimeToOtherBank_WhenGapIsTwoAndLeafsFallInSequence_ShouldBeTwo()
+        {
+            // Arrange
+            int gapSize = 2;
+
+            int[] schedule = new int[2] { 1, 2 };
+            
+            // Act & Assert
+            AssertTimeToOtherBankIs(
+                gapSize,
+                schedule,
+                expectedTime: 1);
+        }
+
         private static void AssertCalculateTimeToOtherBankThrowsArgumentException(int gapSize, int[] schedule)
         {
             // Arrange

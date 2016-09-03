@@ -16,17 +16,27 @@ namespace Codility.Lessons
                 throw new ArgumentException();
             }
 
-            if (schedule[0] > gapSize)
+            bool[] gaps = new bool[gapSize];
+
+            for (int i = 0; i < schedule.Length; i++)
             {
-                throw new ArgumentException();
+                int coveredPosition = schedule[i];
+
+                if (coveredPosition > gapSize)
+                {
+                    throw new ArgumentException();
+                }
+
+                gaps[coveredPosition - 1] = true;
             }
 
-            if (schedule[0] < gapSize)
+            bool isPathReady = true;
+            for (int i = 0; i < gaps.Length; i++)
             {
-                return -1;
+                isPathReady &= gaps[i];
             }
 
-            return 0;
+            return isPathReady ? schedule.Length - 1 : -1;
         }
     }
 }
