@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BinaryGap.cs" />
     <Compile Include="CyclicRotation.cs" />
+    <Compile Include="FrogRiverNavigator.cs" />
     <Compile Include="JumpCalculator.cs" />
     <Compile Include="MissingElementFinder.cs" />
     <Compile Include="MissingInteger.cs" />
