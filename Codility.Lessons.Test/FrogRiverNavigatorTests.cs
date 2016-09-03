@@ -39,7 +39,7 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
-        public void CalculateTimeToOtherBank_WhenLeafFallsBeyoundRiverGap_ShouldThrowException()
+        public void CalculateTimeToOtherBank_WhenLeafFallsBeyondRiverGap_ShouldThrowException()
         {
             // Arrange
             int gapSize = 1;
