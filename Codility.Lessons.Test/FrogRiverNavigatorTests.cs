@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System;
+using FluentAssertions;
 
 using NUnit.Framework;
 
@@ -33,6 +34,20 @@ namespace Codility.Lessons.Test
                 gapSize,
                 schedule,
                 expectedTime: -1);
+        }
+
+        [Test]
+        public void CalculateTimeToOtherBank_WhenLeafFallsBeyoundRiverGap_ShouldThrowException()
+        {
+            // Arrange
+            int gapSize = 1;
+
+            int[] scheduleBeyondRiverGap = new int[1] { 2 };
+
+            Action calculateTimeToOtherBank = () => new FrogRiverNavigator().CalculateTimeToOtherBank(gapSize, scheduleBeyondRiverGap);
+
+            // Act & Assert
+            calculateTimeToOtherBank.ShouldThrow<ArgumentException>();
         }
 
         private static void AssertTimeToOtherBankIs(int gapSize, int[] schedule, int expectedTime)
