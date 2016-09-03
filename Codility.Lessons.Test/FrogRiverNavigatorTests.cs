@@ -8,6 +8,8 @@ namespace Codility.Lessons.Test
     [TestFixture]
     public class FrogRiverNavigatorTests
     {
+        private const int Never = -1;
+
         [Test]
         public void CalculateTimeToOtherBank_WhenGapSizeIsOneAndLeafFallsInZeroTime_ShouldBeZero()
         {
@@ -33,7 +35,7 @@ namespace Codility.Lessons.Test
             AssertTimeToOtherBankIs(
                 gapSize,
                 schedule,
-                expectedTime: -1);
+                expectedTime: Never);
         }
 
         [Test]
@@ -100,6 +102,21 @@ namespace Codility.Lessons.Test
                 gapSize,
                 schedule,
                 expectedTime: 1);
+        }
+
+        [Test]
+        public void CalculateTimeToOtherBank_WhenLeafsFallInSamePositionButDontCoverLastBit_ShouldBeNever()
+        {
+            // Arrange
+            int gapSize = 2;
+
+            int[] schedule = new int[2] { 1, 1 };
+
+            // Act & Assert
+            AssertTimeToOtherBankIs(
+                gapSize,
+                schedule,
+                expectedTime: Never);
         }
 
         private static void AssertCalculateTimeToOtherBankThrowsArgumentException(int gapSize, int[] schedule)
