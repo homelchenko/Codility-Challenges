@@ -80,7 +80,7 @@ namespace Codility.Lessons.Test
             // Arrange
             int emptyGapSize = 0;
 
-            int[] schedule = new int[1] { 0 };
+            int[] schedule = new int[1] { 1 };
 
             // Act & Assert
             AssertCalculateTimeToOtherBankThrowsArgumentException(emptyGapSize, schedule);
