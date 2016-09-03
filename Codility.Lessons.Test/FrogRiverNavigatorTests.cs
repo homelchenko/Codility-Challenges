@@ -14,11 +14,34 @@ namespace Codility.Lessons.Test
             int gapSize = 1;
             int[] schedule = new int[1] { 1 };
 
+            // Act & Assert
+            AssertTimeToOtherBankIs(
+                gapSize,
+                schedule,
+                expectedTime: 0);
+        }
+
+        [Test]
+        public void CalculateTimeToOtherBank_WhenGapSizeIsTwoAndLeafFallsOnlyAtPositionOne_ShouldBeNever()
+        {
+            // Arrange
+            int gapSize = 2;
+            int[] schedule = new int[1] { 1 };
+
+            // Act & Assert
+            AssertTimeToOtherBankIs(
+                gapSize,
+                schedule,
+                expectedTime: -1);
+        }
+
+        private static void AssertTimeToOtherBankIs(int gapSize, int[] schedule, int expectedTime)
+        {
             // Act
             int timeToOtherBank = new FrogRiverNavigator().CalculateTimeToOtherBank(gapSize, schedule);
 
             // Assert
-            timeToOtherBank.Should().Be(0);
+            timeToOtherBank.Should().Be(expectedTime);
         }
     }
 }
