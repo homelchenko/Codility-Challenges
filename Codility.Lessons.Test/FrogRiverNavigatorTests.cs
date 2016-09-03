@@ -87,6 +87,21 @@ namespace Codility.Lessons.Test
                 expectedTime: 1);
         }
 
+        [Test]
+        public void CalculateTimeToOtherBank_WhenGapIsTwoAndLeafsFallInPositionSeveralTimes_ShouldBeEarliestTime()
+        {
+            // Arrange
+            int gapSize = 2;
+
+            int[] schedule = new int[3] { 1, 2, 1 };
+            
+            // Act & Assert
+            AssertTimeToOtherBankIs(
+                gapSize,
+                schedule,
+                expectedTime: 1);
+        }
+
         private static void AssertCalculateTimeToOtherBankThrowsArgumentException(int gapSize, int[] schedule)
         {
             // Arrange

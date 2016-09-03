@@ -18,6 +18,7 @@ namespace Codility.Lessons
 
             bool[] gaps = new bool[gapSize];
 
+            int gapsLeft = gapSize;
             for (int i = 0; i < schedule.Length; i++)
             {
                 int coveredPosition = schedule[i];
@@ -27,16 +28,18 @@ namespace Codility.Lessons
                     throw new ArgumentException();
                 }
 
-                gaps[coveredPosition - 1] = true;
+                if (!gaps[coveredPosition - 1])
+                {
+                    gaps[coveredPosition - 1] = true;
+                    gapsLeft--;
+                    if (gapsLeft == 0)
+                    {
+                        return i;
+                    }
+                }
             }
 
-            bool isPathReady = true;
-            for (int i = 0; i < gaps.Length; i++)
-            {
-                isPathReady &= gaps[i];
-            }
-
-            return isPathReady ? schedule.Length - 1 : -1;
+            return -1;
         }
     }
 }
