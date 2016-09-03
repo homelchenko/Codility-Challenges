@@ -23,7 +23,7 @@ namespace Codility.Lessons
             {
                 int coveredPosition = schedule[i];
 
-                if (coveredPosition > gapSize)
+                if (coveredPosition <= 0 || coveredPosition > gapSize)
                 {
                     throw new ArgumentException();
                 }

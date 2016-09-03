@@ -51,6 +51,18 @@ namespace Codility.Lessons.Test
         }
 
         [Test]
+        public void CalculateTimeToOtherBank_WhenLefaFallsBeforeRiverGap_ShouldThrowException()
+        {
+            // Arrange
+            int gapSize = 1;
+
+            int[] scheduleBeforeRiverGap = new int[1] { 0 };
+            
+            // Act & Assert
+            AssertCalculateTimeToOtherBankThrowsArgumentException(gapSize, scheduleBeforeRiverGap);
+        }
+
+        [Test]
         public void CalculateTimeToOtherBank_WhenThereIsNoSchedule_ShouldThrow()
         {
             // Arrange
