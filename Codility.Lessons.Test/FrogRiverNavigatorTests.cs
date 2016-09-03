@@ -44,10 +44,8 @@ namespace Codility.Lessons.Test
 
             int[] scheduleBeyondRiverGap = new int[1] { 2 };
 
-            Action calculateTimeToOtherBank = () => new FrogRiverNavigator().CalculateTimeToOtherBank(gapSize, scheduleBeyondRiverGap);
-
             // Act & Assert
-            calculateTimeToOtherBank.ShouldThrow<ArgumentException>();
+            AssertCalculateTimeToOtherBankThrowsArgumentException(gapSize, scheduleBeyondRiverGap);
         }
 
         [Test]
@@ -58,12 +56,30 @@ namespace Codility.Lessons.Test
 
             int[] emptySchedule = new int[0];
 
-            Action calculateTimeToOtherBank = () => new FrogRiverNavigator().CalculateTimeToOtherBank(gapSize, emptySchedule);
+            // Act & Assert
+            AssertCalculateTimeToOtherBankThrowsArgumentException(gapSize, emptySchedule);
+        }
+
+        [Test]
+        public void CalculateTimeToOtherBank_WhenGapIsLessThanUnit_ShouldThrow()
+        {
+            // Arrange
+            int emptyGapSize = 0;
+
+            int[] schedule = new int[1] { 0 };
+
+            // Act & Assert
+            AssertCalculateTimeToOtherBankThrowsArgumentException(emptyGapSize, schedule);
+        }
+
+        private static void AssertCalculateTimeToOtherBankThrowsArgumentException(int gapSize, int[] schedule)
+        {
+            // Arrange
+            Action calculateTimeToOtherBank = () => new FrogRiverNavigator().CalculateTimeToOtherBank(gapSize, schedule);
 
             // Act & Assert
             calculateTimeToOtherBank.ShouldThrow<ArgumentException>();
         }
-
 
         private static void AssertTimeToOtherBankIs(int gapSize, int[] schedule, int expectedTime)
         {
