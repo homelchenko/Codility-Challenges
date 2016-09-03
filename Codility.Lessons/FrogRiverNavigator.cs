@@ -4,9 +4,11 @@ namespace Codility.Lessons
 {
     public class FrogRiverNavigator
     {
+        public const int MaxAllowedGapSize = 100000;
+
         public int CalculateTimeToOtherBank(int gapSize, int[] schedule)
         {
-            if (gapSize <= 0)
+            if (gapSize <= 0 || gapSize > MaxAllowedGapSize)
             {
                 throw new ArgumentException();
             }
