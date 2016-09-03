@@ -50,6 +50,21 @@ namespace Codility.Lessons.Test
             calculateTimeToOtherBank.ShouldThrow<ArgumentException>();
         }
 
+        [Test]
+        public void CalculateTimeToOtherBank_WhenThereIsNoSchedule_ShouldThrow()
+        {
+            // Arrange
+            int gapSize = 1;
+
+            int[] emptySchedule = new int[0];
+
+            Action calculateTimeToOtherBank = () => new FrogRiverNavigator().CalculateTimeToOtherBank(gapSize, emptySchedule);
+
+            // Act & Assert
+            calculateTimeToOtherBank.ShouldThrow<ArgumentException>();
+        }
+
+
         private static void AssertTimeToOtherBankIs(int gapSize, int[] schedule, int expectedTime)
         {
             // Act

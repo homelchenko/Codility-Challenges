@@ -6,6 +6,11 @@ namespace Codility.Lessons
     {
         public int CalculateTimeToOtherBank(int gapSize, int[] schedule)
         {
+            if (schedule.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
             if (schedule[0] > gapSize)
             {
                 throw new ArgumentException();
